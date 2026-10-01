@@ -1,0 +1,8 @@
+services:
+  backend:
+    environment:
+      DB_URL: jdbc:mysql://mysql:3306/digitallibrary?useSSL=false&serverTimezone=Asia/Ho_Chi_Minh&allowPublicKeyRetrieval=true
+
+  ai-service:
+    ports:
+      - "8000:8000"

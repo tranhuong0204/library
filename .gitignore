@@ -1,0 +1,41 @@
+# Dependency directories
+node_modules/
+.venv/
+venv/
+ENV/
+env/
+__pycache__/
+*.pyc
+
+# Build outputs
+target/
+dist/
+out/
+build/
+*.class
+
+# IDE configurations
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Local configuration files
+.env
+.env.docker
+.env.local
+.env.*.local
+
+# Application files & Uploads
+uploads/
+vector_db/index.faiss
+vector_db/index.pkl
+logs/
+*.log
+
+# System files
+.DS_Store
+Thumbs.db

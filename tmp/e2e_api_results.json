@@ -1,0 +1,71 @@
+{
+  "total": 107,
+  "passed": 97,
+  "failed": [
+    {
+      "name": "user.password.invalid_old",
+      "ok": false,
+      "detail": "status=500 time=0.09s"
+    },
+    {
+      "name": "forum.category.create.user_denied",
+      "ok": false,
+      "detail": "status=500 time=0.05s"
+    },
+    {
+      "name": "ai.direct.general.mode",
+      "ok": false,
+      "detail": "RAG"
+    },
+    {
+      "name": "ai.direct.general.no_sources",
+      "ok": false,
+      "detail": "[{'id': '9', 'documentId': '9', 'title': 'Tài liệu tham khảo', 'author': 'Thạch ', 'categoryName': 'Kỹ năng mềm', 'fileUrl': '/uploads/documents/14cf52de-f5e1-440e-bb7a-159d9b9ed075.pdf', 'FileUrl': '/uploads/documents/14cf52de-f5e1-440e-bb7a-159d9b9ed075.pdf', 'pages': [2]}, {'id': '8', 'documentId"
+    },
+    {
+      "name": "ai.direct.rag.mode",
+      "ok": false,
+      "detail": "GENERAL"
+    },
+    {
+      "name": "ai.direct.rag.fact.codename",
+      "ok": false,
+      "detail": "Xin lỗi, nhưng tôi không thấy thông tin về Project Aurora trong các tài liệu của Alibaba Cloud. Tài liệu hiện tại mà tôi có không cung cấp thông tin cụ thể về Project Aurora, bao gồm mã dự án, chu kỳ "
+    },
+    {
+      "name": "ai.direct.rag.fact.cycle",
+      "ok": false,
+      "detail": "Xin lỗi, nhưng tôi không thấy thông tin về Project Aurora trong các tài liệu của Alibaba Cloud. Tài liệu hiện tại mà tôi có không cung cấp thông tin cụ thể về Project Aurora, bao gồm mã dự án, chu kỳ "
+    },
+    {
+      "name": "ai.direct.rag.fact.unit",
+      "ok": false,
+      "detail": "Xin lỗi, nhưng tôi không thấy thông tin về Project Aurora trong các tài liệu của Alibaba Cloud. Tài liệu hiện tại mà tôi có không cung cấp thông tin cụ thể về Project Aurora, bao gồm mã dự án, chu kỳ "
+    },
+    {
+      "name": "ai.direct.rag.citation",
+      "ok": false,
+      "detail": "Cloud. Tài liệu hiện tại mà tôi có không cung cấp thông tin cụ thể về Project Aurora, bao gồm mã dự án, chu kỳ review và đơn vị phụ trách. Bạn có thể cần tham khảo thêm nguồn khác để tìm câu trả lời cho câu hỏi này.\n\n> Câu trả lời sử dụng kiến thức chung của mô hình, không trích dẫn tài liệu nội bộ."
+    },
+    {
+      "name": "ai.direct.rag.sources",
+      "ok": false,
+      "detail": "[]"
+    }
+  ],
+  "state": {
+    "user_id": 1,
+    "admin_id": 2,
+    "category_id": 1,
+    "forum_category_id": 1,
+    "post_id": 1,
+    "comment_id": 1,
+    "report_id": 1,
+    "group_id": 1,
+    "join_member_id": 2,
+    "news_id": 1,
+    "document_id": 1,
+    "doc_comment_id": 1,
+    "conversation_id": 1
+  }
+}

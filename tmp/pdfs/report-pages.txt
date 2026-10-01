@@ -1,0 +1,1320 @@
+===== PAGE 1 =====
+ĐẠI HỌC CÔNG NGHIỆP HÀ NỘI
+TRƯỜNG CÔNG NGHỆ THÔNG TIN VÀ TRUYỀN THÔNG
+======***======
+BÁO CÁO BTL THUỘC HỌC PHẦN:
+ĐỒ ÁN CHUYÊN NGÀNH
+ĐỀ TÀI: XÂY DỰNG WEBSITE THƯ VIỆN SỐ
+TÍCH HỢP CHATBOT AI
+GVHD: PGS.TS.Nguyễn Thị Mỹ Bình
+Lớp - Nhóm: 20254IT6150001 - Nhóm 7
+Thành viên: Phạm Ngọc Thạch - 2023601930
+Trần Đức Ngọc - 2023602056
+Nguyễn Văn Phú - 2023603379
+Nguyễn Thị Minh Nguyệt - 2023602253
+
+===== PAGE 2 =====
+1
+Hà Nội, 08/2026
+LỜI NÓI ĐẤU
+Trong bối cảnh chuyển đổi số đang diễn ra mạnh mẽ, việc ứng
+dụng công nghệ thông tin vào quản lý và khai thác nguồn tài nguyên tri
+thức ngày càng đóng vai trò quan trọng trong lĩnh vực giáo dục và nghiên
+cứu. Thư viện số không chỉ giúp lưu trữ và quản lý tài liệu một cách khoa
+học mà còn tạo điều kiện cho người dùng dễ dàng tra cứu, truy cập và sử
+dụng tài liệu mọi lúc, mọi nơi thông qua Internet. Bên cạnh đó, sự phát
+triển nhanh chóng của trí tuệ nhân tạo (Artificial Intelligence - AI) đã mở
+ra nhiều giải pháp mới nhằm nâng cao hiệu quả tìm kiếm và hỗ trợ người
+dùng trong quá trình học tập, nghiên cứu.
+Xuất phát từ thực tiễn đó, nhóm lựa chọn thực hiện đề tài "Xây
+dựng website thư viện số tích hợp chatbot AI" với mục tiêu xây dựng một
+hệ thống thư viện số hiện đại, hỗ trợ quản lý tài liệu, tìm kiếm, đọc và tải
+tài liệu trực tuyến, đồng thời tích hợp chatbot AI giúp người dùng tra cứu
+thông tin, giải đáp các câu hỏi liên quan đến tài liệu và hỗ trợ khai thác
+nguồn tri thức một cách nhanh chóng, thuận tiện và chính xác.
+Trong quá trình thực hiện đề tài, nhóm đã nghiên cứu và vận dụng
+các kiến thức về phát triển ứng dụng web, thiết kế cơ sở dữ liệu, xây dựng
+hệ thống quản lý và ứng dụng trí tuệ nhân tạo vào bài toán hỏi đáp trên tài
+liệu. Thông qua đó, nhóm không chỉ củng cố kiến thức chuyên môn đã
+được học mà còn nâng cao kỹ năng phân tích, thiết kế, lập trình, làm việc
+nhóm và giải quyết các vấn đề phát sinh trong quá trình phát triển phần
+mềm.
+
+===== PAGE 3 =====
+2
+Mặc dù đã nỗ lực nghiên cứu và hoàn thiện hệ thống trong phạm vi
+thời gian và kiến thức cho phép, đề tài vẫn khó tránh khỏi những thiếu
+sót. Nhóm rất mong nhận được những ý kiến đóng góp và nhận xét từ quý
+thầy cô để tiếp tục hoàn thiện hệ thống cũng như nâng cao kiến thức và
+kinh nghiệm trong quá trình học tập và nghiên cứu.
+Nhóm xin chân thành cảm ơn!
+
+===== PAGE 4 =====
+3
+MỤC LỤC
+MỞ ĐẦU.................................................................................................... 8
+1. Giới thiệu bài toán............................................................................. 8
+2. Lý do chọn đề tài............................................................................... 8
+3. Mục tiêu nghiên cứu..........................................................................9
+4. Công nghệ và công cụ sử dụng........................................................10
+5. Kết quả mong muốn đạt được của đề tài.........................................10
+6. Cấu trúc báo cáo.............................................................................. 11
+CHƯƠNG 1. PHÂN TÍCH VÀ ĐẶC TẢ YÊU CẦU WEBSITE THƯ
+VIỆN SỐ...................................................................................................12
+1.1. Khảo sát hiện trạng.......................................................................12
+1.2. Bài toán cần giải quyết................................................................. 13
+1.3. Xác định các tác nhân hệ thống....................................................18
+1.4. Phân tích yêu cầu chức năng và yêu cầu phi chức năng...............21
+1.4.1. Phân tích yêu cầu chức năng................................................ 21
+1.4.2. Yêu cầu phi chức năng......................................................... 24
+1.4.3. Đặc tả chức năng.................................................................. 26
+1.4.3.1. Yêu cầu chức năng Đăng nhập................................................26
+1.4.3.2. Yêu cầu chức năng Quản lý bài viết............................ 28
+1.4.3.3. Yêu cầu chức năng Quản lý tài liệu............................. 30
+1.4.3.4. Yêu cầu chức năng Thống kê hệ thống........................32
+1.4.3.5. Yêu cầu chức năng Quản lý nhóm (admin)..................34
+1.4.3.6. Yêu cầu chức năng Trợ lý AI.......................................37
+1.4.3.7. Yêu cầu chức năng Quản lý yêu thích..........................39
+1.4.3.8. Yêu cầu chức năng Đánh giá tài liệu............................41
+1.4.3.9. Yêu cầu chức năng Tìm kiếm tài liệu.......................... 43
+
+===== PAGE 5 =====
+4
+1.4.3.10. Yêu cầu chức năng Thảo luận nhóm..........................44
+1.5. Xây dựng các mô hình nghiệp vụ cần thiết (nếu có)....................47
+CHƯƠNG 2. THIẾT KẾ HỆ THỐNG WEBSITE THƯ VIỆN SỐ........ 49
+2.1. Thiết kế kiến trúc hệ thống...........................................................49
+2.1.1. Kiến trúc tổng thể của hệ thống........................................... 49
+2.1.2. Các thành phần của hệ thống................................................50
+2.1.3. Luồng xử lý dữ liệu trong hệ thống......................................50
+2.2. Thiết kế backend...........................................................................51
+2.3. Thiết kế frontend.......................................................................... 51
+CHƯƠNG 3. XÂY DỰNG VÀ CÀI ĐẶT HỆ THỐNG WEBSITE THƯ
+VIỆN SỐ...................................................................................................52
+3.1. Cài đặt công cụ và phần mềm.......................................................52
+3.1.1. Công cụ phát triển................................................................ 52
+3.1.2. Môi trường cài đặt và vận hành............................................52
+3.2. Cài đặt...........................................................................................52
+3.2.1. Mục tiêu phần cài đặt........................................................... 52
+3.2.2. Chuẩn bị mã nguồn và công cụ............................................ 52
+3.2.3. Cấu trúc thư mục.................................................................. 52
+3.2.4. Thông số cấu hình và tùy chỉnh........................................... 52
+3.3. Xây dựng hệ thống....................................................................... 52
+3.3.1. Cài đặt cơ sở dữ liệu.............................................................52
+3.3.2. Xây dựng các chức năng backend........................................52
+3.3.3. Xây dựng giao diện frontend................................................52
+CHƯƠNG 4. KIỂM THỬ VÀ ĐÁNH GIÁ WEBSITE THƯ VIỆN SỐ 53
+4.1. Mục tiêu và phương pháp kiểm thử.............................................53
+4.2. Kiểm thử hệ thống........................................................................53
+
+===== PAGE 6 =====
+5
+4.3. Kết luận và hướng phát triển........................................................ 53
+
+===== PAGE 7 =====
+6
+DANH MỤC HÌNH ẢNH
+
+===== PAGE 8 =====
+7
+DANH MỤC BẢNG BIỂU
+
+===== PAGE 9 =====
+8
+MỞ ĐẦU
+1. Giới thiệu bài toán
+Trong bối cảnh chuyển đổi số đang phát triển mạnh mẽ, việc số hóa
+tài liệu và ứng dụng công nghệ vào học tập ngày càng trở nên phổ biến.
+Tuy nhiên, nhiều hệ thống thư viện hiện nay vẫn chủ yếu tập trung vào
+quản lý tài liệu, chưa hỗ trợ hiệu quả việc tìm kiếm thông minh, trao đổi
+học thuật và khai thác tri thức từ nguồn tài liệu số. Bên cạnh đó, người
+học thường gặp khó khăn trong việc tìm kiếm thông tin chính xác và tiếp
+cận tài liệu phù hợp với nhu cầu học tập.
+Xuất phát từ thực tế đó, đề tài “Xây dựng website thư viện số tích
+hợp chatbot AI” được thực hiện nhằm xây dựng một nền tảng hỗ trợ quản
+lý, chia sẻ và khai thác tài liệu học tập trên môi trường số. Website cho
+phép người dùng tìm kiếm, xem, tải xuống, lưu trữ và trao đổi về các tài
+liệu học tập. Đồng thời, hệ thống tích hợp chatbot AI nhằm hỗ trợ người
+dùng tra cứu thông tin, giải đáp thắc mắc và khai thác tri thức từ nguồn
+tài liệu một cách nhanh chóng, thuận tiện và hiệu quả hơn.
+Đề tài hướng tới lĩnh vực công nghệ thông tin trong giáo dục
+(EdTech), kết hợp giữa thư viện số, quản lý tài liệu, nền tảng trao đổi học
+tập và trí tuệ nhân tạo (AI). Thông qua việc ứng dụng công nghệ AI vào
+hệ thống thư viện số, đề tài góp phần nâng cao hiệu quả tìm kiếm và khai
+thác tài liệu, hỗ trợ quá trình tự học và tạo ra một môi trường học tập,
+chia sẻ kiến thức trực tuyến trên cùng một nền tảng.
+2. Lý do chọn đề tài
+Đề tài được lựa chọn nhằm đáp ứng nhu cầu xây dựng một hệ
+thống thư viện số hiện đại, hỗ trợ quản lý và khai thác tài liệu hiệu quả,
+đồng thời ứng dụng trí tuệ nhân tạo để nâng cao trải nghiệm học tập. Việc
+
+===== PAGE 10 =====
+9
+tích hợp trợ lý AI giúp người dùng tìm kiếm và nhận câu trả lời dựa trên
+nội dung tài liệu của hệ thống, góp phần tiết kiệm thời gian và nâng cao
+hiệu quả học tập.
+Hệ thống có ý nghĩa thực tiễn trong việc hỗ trợ quản lý tài liệu, tạo
+môi trường trao đổi học tập và có thể triển khai tại các trường đại học,
+trung tâm đào tạo hoặc các tổ chức có nhu cầu xây dựng thư viện số.
+3. Mục tiêu nghiên cứu
+Mục tiêu của đề tài là xây dựng website Library-AI – Nền tảng thư
+viện và học tập thông minh, nhằm cung cấp một hệ thống quản lý tài liệu
+số hiện đại, hỗ trợ người dùng tìm kiếm, lưu trữ và khai thác tài liệu một
+cách hiệu quả. Hệ thống hướng đến việc tạo ra một môi trường học tập
+trực tuyến, nơi người dùng có thể trao đổi kiến thức thông qua diễn đàn
+và nhóm học tập, đồng thời dễ dàng tiếp cận các nguồn tài liệu phục vụ
+học tập và nghiên cứu.
+Bên cạnh các chức năng quản lý người dùng, quản lý tài liệu, phân
+loại tài liệu, tìm kiếm, đánh giá, lưu tài liệu yêu thích, thông báo và thống
+kê, đề tài còn tích hợp trợ lý AI sử dụng phương pháp
+Retrieval-Augmented Generation (RAG). Trợ lý AI có khả năng truy xuất
+nội dung từ kho tài liệu của hệ thống và đưa ra câu trả lời chính xác, kèm
+theo nguồn tham khảo, giúp nâng cao hiệu quả học tập và hỗ trợ người
+dùng trong quá trình tìm kiếm thông tin.
+Ngoài ra, hệ thống được xây dựng theo kiến trúc hiện đại, đảm bảo
+tính ổn định, dễ bảo trì và có khả năng mở rộng, tạo tiền đề cho việc bổ
+sung các chức năng mới và triển khai trong môi trường thực tế tại các
+trường đại học, trung tâm đào tạo hoặc các tổ chức có nhu cầu quản lý thư
+viện số.
+
+===== PAGE 11 =====
+10
+4. Công nghệ và công cụ sử dụng
+Để phát triển hệ thống Library-AI, nhóm sử dụng nhiều công nghệ và
+công cụ hiện đại nhằm đảm bảo hiệu năng, khả năng mở rộng và thuận
+tiện trong quá trình phát triển.
+● ReactJS được sử dụng để xây dựng giao diện người dùng
+(Frontend), mang lại khả năng tương tác cao, hỗ trợ cập nhật dữ
+liệu nhanh và tạo trải nghiệm sử dụng thân thiện.
+● Spring Boot được sử dụng để phát triển Backend, xây dựng các
+RESTful API, xử lý nghiệp vụ, quản lý người dùng, tài liệu, phân
+quyền và kết nối với cơ sở dữ liệu.
+● FastAPI được sử dụng để xây dựng dịch vụ AI, tiếp nhận yêu cầu
+từ Backend và triển khai chức năng trợ lý AI.
+● MySQL được sử dụng làm hệ quản trị cơ sở dữ liệu, lưu trữ thông
+tin người dùng, tài liệu, diễn đàn, nhóm học tập và các dữ liệu của
+hệ thống.
+● Chức năng trợ lý AI được xây dựng dựa trên phương pháp
+Retrieval-Augmented Generation (RAG), kết hợp LangChain,
+FAISS và Google Gemini API để truy xuất nội dung từ kho tài liệu
+và sinh câu trả lời chính xác dựa trên ngữ cảnh.
+● Trong quá trình phát triển, nhóm sử dụng Git để quản lý mã nguồn
+và theo dõi phiên bản, Postman và Swagger để kiểm thử các API,
+Visual Studio Code và IntelliJ IDEA để lập trình, cùng với Draw.io
+để thiết kế các sơ đồ phân tích và thiết kế hệ thống.
+Việc kết hợp các công nghệ và công cụ trên giúp hệ thống hoạt động ổn
+định, dễ bảo trì, dễ mở rộng và đáp ứng tốt yêu cầu xây dựng một nền
+tảng thư viện và học tập thông minh.
+5. Kết quả mong muốn đạt được của đề tài
+
+===== PAGE 12 =====
+11
+Sau khi hoàn thành, đề tài kỳ vọng xây dựng được một website thư viện
+số hoạt động ổn định, đáp ứng các nhu cầu quản lý và khai thác tài liệu
+trong môi trường học tập hiện đại.
+Cụ thể, hệ thống cần đạt được các kết quả sau:
+● Xây dựng thành công hệ thống quản lý thư viện số với đầy đủ các
+chức năng quản lý người dùng, tài liệu, danh mục và nội dung.
+● Cho phép người dùng tìm kiếm, xem, tải, đánh giá, bình luận và
+lưu tài liệu yêu thích.
+● Hỗ trợ tạo nhóm học tập, trao đổi thông tin và tương tác thông qua
+diễn đàn.
+● Tích hợp chatbot AI có khả năng trả lời câu hỏi dựa trên nội dung
+tài liệu, hỗ trợ tóm tắt tài liệu, tạo flashcard và sinh câu hỏi trắc
+nghiệm.
+● Xây dựng giao diện trực quan, dễ sử dụng và đảm bảo tính bảo
+mật, ổn định của hệ thống.
+● Tạo ra một nền tảng có khả năng mở rộng, đáp ứng nhu cầu học tập
+và quản lý thư viện số trong các trường học, trung tâm đào tạo và
+cộng đồng học tập.
+6. Cấu trúc báo cáo
+Chương 1 : Phân tích và đặc tả yêu cầu phần mềm
+Chương 2 : Thiết kế hệ thống
+Chương 3 : Xây dựng và cài đặt hệ thống
+Chương 4 : Kiểm thử và đánh giá hệ thống
+
+===== PAGE 13 =====
+12
+CHƯƠNG 1. PHÂN TÍCH VÀ ĐẶC TẢ YÊU CẦU
+WEBSITE THƯ VIỆN SỐ
+1.1. Khảo sát hiện trạng
+Quá trình khảo sát hiện trạng được thực hiện nhằm xác định nhu
+cầu, khó khăn và thói quen của người dùng trong việc tìm kiếm, quản lý
+và sử dụng tài liệu học tập, từ đó đề xuất một hệ thống thư viện số đáp
+ứng tốt nhu cầu tra cứu, chia sẻ, tương tác cộng đồng và hỗ trợ học tập
+trực tuyến bằng AI. Khảo sát thu thập phản hồi từ 61 người tham gia, cho
+thấy đối tượng người dùng chính là học sinh, sinh viên (chiếm 93.4%),
+thuộc độ tuổi phổ biến từ 18 đến 22 tuổi (80.3%), bên cạnh một tỷ lệ nhỏ
+người tự học (9.8% thuộc độ tuổi 23–30 tuổi và 8.2% dưới 18 tuổi).
+Về thực trạng khai thác tài liệu (59 khảo sát), kênh tìm kiếm phổ
+biến nhất hiện nay là Google Search với 84.7% (50/59 người sử dụng),
+tiếp theo là sách/tài liệu nội bộ (52.5%), các website thư viện số của
+trường/tổ chức (47.5%), diễn đàn/nhóm mạng xã hội (44.1%) và thư viện
+truyền thống (25.4%). Rào cản lớn nhất người dùng gặp phải khi tìm
+kiếm tài liệu (56 phản hồi) là tình trạng "thông tin quá nhiều, khó chọn
+lọc" (chiếm 58.9%), tiếp đến là chi phí tài liệu cao (17.9%), tài liệu không
+cập nhật mới (7.1%) và thiếu sự hướng dẫn cụ thể (7.1%). Về nhu cầu lưu
+trữ và chia sẻ, có đến 40.7% người dùng thường xuyên và 39% thỉnh
+thoảng có nhu cầu tải tài liệu lên hệ thống để lưu trữ cũng như chia sẻ cho
+người khác.
+Đánh giá về các tính năng thư viện số, đa số phản hồi coi các chức
+năng tìm kiếm theo tiêu đề, từ khóa nội dung, tác giả, lọc theo danh mục,
+xem chi tiết, đọc thử, tải về và lưu yêu thích là "Cần thiết" đến "Rất cần
+thiết". Đối với nhu cầu tích hợp trợ lý AI (60–61 phản hồi), 95.1% người
+dùng sẵn sàng sử dụng Chatbot AI để tìm kiếm và tóm tắt tài liệu (mức
+
+===== PAGE 14 =====
+13
+đánh giá 3/5 trở lên, trong đó 36.1% đạt mức 4 và 31.1% đạt mức 5);
+những tính năng AI được mong đợi nhất là giải đáp thắc mắc nội dung tài
+liệu (75%), gợi ý tài liệu liên quan (66.7%), dịch thuật đa ngôn ngữ
+(48.3%), tạo bài kiểm tra/câu hỏi ôn tập (46.7%), chuyển đổi định dạng
+tệp (30%) và sửa lỗi chính tả/ngữ pháp (28.3%). Bên cạnh đó, mức độ tin
+tưởng của người dùng vào thông tin do AI cung cấp ở mức tương đối cao
+(93.4% đánh giá từ mức 3 đến 5, với 44.3% ở mức 3 và 27.9% ở mức 4)
+và có tới 95% người dùng sẵn lòng đóng góp phản hồi để cải thiện độ
+chính xác cho AI (33.3% luôn luôn và 61.7% thỉnh thoảng). Ngoài ra, hệ
+thống cũng ghi nhận các nhu cầu quản trị chuyên sâu như phân quyền,
+kiểm duyệt nội dung, xử lý vi phạm, báo cáo thống kê cũng như các yêu
+cầu kỹ thuật về bảo mật (xác thực JWT, mã hóa), giao diện tương thích đa
+thiết bị và hiệu năng ổn định. Tất cả các số liệu và thông tin thực tế này
+chính là cơ sở quan trọng để xây dựng chi tiết các yêu cầu chức năng và
+phi chức năng cho hệ thống ở các phần tiếp theo.
+1.2. Bài toán cần giải quyết
+Trong môi trường giáo dục hiện nay, nhu cầu tìm kiếm tài liệu, trao
+đổi kiến thức và nhận hỗ trợ học tập của người dùng diễn ra liên tục,
+không bị giới hạn bởi thời gian hay địa điểm. Tuy nhiên, cả mô hình thư
+viện truyền thống và hệ thống thư viện số như libol bookworm vẫn còn
+tồn tại một số hạn chế nhất định.
+
+===== PAGE 15 =====
+14
+Đối với thư viện truyền thống, người dùng phải đến trực tiếp thư viện
+trong thời gian làm việc để tra cứu, mượn hoặc trả tài liệu. Việc tìm kiếm
+chủ yếu dựa trên mục lục hoặc sự hỗ trợ của cán bộ thư viện nên mất
+nhiều thời gian, đặc biệt khi số lượng tài liệu lớn hoặc tài liệu đã được lưu
+trữ từ lâu. Đồng thời, khả năng tiếp cận tài liệu bị giới hạn bởi không gian
+và thời gian hoạt động của thư viện.
+
+===== PAGE 16 =====
+15
+Đối với hệ thống thư viện số Libol bookworm, mặc dù đã hỗ trợ tra cứu
+trực tuyến và quản lý tài liệu hiệu quả, việc tìm kiếm vẫn chủ yếu dựa
+trên các trường thông tin như tên tài liệu, tên tác giả, chủ đề hoặc từ khóa
+được biên mục. Người dùng thường phải biết tương đối chính xác thông
+tin của tài liệu mới có thể tìm thấy kết quả phù hợp. Hệ thống chưa hỗ trợ
+tốt việc tìm kiếm theo ngôn ngữ tự nhiên hoặc truy vấn theo nội dung,
+khiến người dùng gặp khó khăn khi chỉ nhớ nội dung khái quát hoặc
+muốn đặt câu hỏi theo cách diễn đạt thông thường.
+Bên cạnh đó, các hoạt động học tập như chia sẻ tài liệu, thảo luận, trao
+đổi giữa người học, tham gia nhóm học tập và cập nhật thông báo thường
+được thực hiện trên nhiều nền tảng khác nhau như mạng xã hội, ứng dụng
+nhắn tin hoặc các hệ thống quản lý học tập. Việc phân tán này làm gián
+đoạn quá trình học tập, gây khó khăn trong việc quản lý thông tin và
+khiến người dùng phải chuyển đổi qua lại giữa nhiều công cụ. Đối với
+cán bộ thư viện, việc giải đáp các câu hỏi lặp lại, hướng dẫn người dùng
+tìm kiếm tài liệu và quản lý nội dung phát sinh cũng tiêu tốn nhiều thời
+gian và nguồn lực.
+Từ thực trạng trên, bài toán đặt ra là xây dựng một nền tảng thư viện số
+và học tập thông minh mang tên Library-AI, có khả năng tập trung tài
+liệu, người dùng, hoạt động cộng đồng và công cụ hỗ trợ học tập trong
+cùng một hệ thống. Nền tảng cần phục vụ đồng thời hai nhóm đối tượng
+chính là người học và quản trị viên, đồng thời bảo đảm tính thuận tiện,
+chính xác, an toàn và khả năng hoạt động liên tục.
+Đối với người dùng, hệ thống cần giải quyết các yêu cầu sau:
+● Cung cấp cơ chế đăng ký, đăng nhập, khôi phục mật khẩu, quản lý
+hồ sơ và bảo vệ tài khoản.
+
+===== PAGE 17 =====
+16
+● Cho phép duyệt, tìm kiếm và lọc tài liệu theo từ khóa hoặc danh
+mục.
+● Hỗ trợ tìm kiếm ngữ nghĩa để xác định tài liệu phù hợp với ý định
+của người dùng, kể cả khi câu truy vấn không trùng hoàn toàn với
+thông tin biên mục.
+● Hiển thị đầy đủ thông tin tài liệu và cho phép xem hoặc tải tệp
+phục vụ học tập.
+● Cho phép người dùng lưu tài liệu yêu thích, đánh giá, bình luận và
+theo dõi hoạt động cá nhân.
+● Cung cấp chatbot AI có khả năng tiếp nhận câu hỏi tiếng Việt và
+trả lời dựa trên nội dung tài liệu của thư viện.
+● Bảo đảm câu trả lời của chatbot có nguồn tham khảo, tên tài liệu và
+vị trí nội dung liên quan để người dùng kiểm tra lại.
+● Lưu lịch sử hội thoại nhằm giúp người dùng tiếp tục quá trình
+nghiên cứu ở những lần truy cập sau.
+● Hỗ trợ thêm các công cụ học tập từ tài liệu như tóm tắt nội dung,
+tạo câu hỏi trắc nghiệm và flashcard.
+● Xây dựng không gian diễn đàn để người dùng đăng bài, bình luận,
+tương tác và báo cáo nội dung không phù hợp.
+● Cho phép tạo và tham gia các nhóm học tập công khai hoặc riêng
+tư, quản lý yêu cầu tham gia và trao đổi tin nhắn trong nhóm.
+● Cung cấp tin tức và thông báo để người dùng cập nhật các hoạt
+động, tài liệu hoặc sự kiện có liên quan.
+Trong đó, bài toán trọng tâm về AI là làm thế nào để chatbot trả lời chính
+xác dựa trên kho tài liệu nội bộ thay vì chỉ sử dụng kiến thức chung của
+mô hình ngôn ngữ. Hệ thống cần trích xuất nội dung từ các tệp PDF, chia
+nhỏ văn bản, biểu diễn các đoạn nội dung dưới dạng vector và xây dựng
+chỉ mục tìm kiếm ngữ nghĩa. Khi nhận được câu hỏi, hệ thống phải xác
+
+===== PAGE 18 =====
+17
+định các đoạn tài liệu liên quan, đưa chúng vào ngữ cảnh của mô hình và
+sinh câu trả lời bằng tiếng Việt theo mô hình RAG. Nếu không tìm thấy
+nguồn đủ phù hợp, chatbot cần thông báo rõ giới hạn dữ liệu hoặc phân
+biệt nội dung được trả lời bằng kiến thức chung, qua đó hạn chế việc tạo
+ra thông tin không có căn cứ.
+Bài toán cũng yêu cầu duy trì tính nhất quán giữa dữ liệu nghiệp vụ và
+kho dữ liệu AI. Khi quản trị viên thêm hoặc cập nhật một tài liệu, nội
+dung của tài liệu phải được xử lý và đồng bộ lại vào cơ sở dữ liệu vector.
+Khi tài liệu bị xóa, các vector và dữ liệu tham chiếu tương ứng cũng phải
+được loại bỏ để chatbot không tiếp tục sử dụng tài liệu đã lỗi thời hoặc
+không còn tồn tại.
+Đối với quản trị viên, hệ thống cần cung cấp khả năng:
+● Quản lý tài khoản, trạng thái hoạt động và vai trò của người dùng.
+● Quản lý danh mục, thông tin, ảnh bìa và tệp tài liệu.
+● Theo dõi số lượt xem, lượt tải, đánh giá và các hoạt động liên quan
+đến tài liệu.
+● Quản lý tin tức và trạng thái xuất bản.
+● Quản lý danh mục diễn đàn, tiếp nhận báo cáo và kiểm duyệt nội
+dung vi phạm.
+● Theo dõi nhóm học tập và các hoạt động cộng đồng.
+● Xem số liệu thống kê tổng quan nhằm hỗ trợ đánh giá tình hình sử
+dụng hệ thống.
+Ngoài các yêu cầu chức năng, hệ thống cần giải quyết những yêu cầu phi
+chức năng quan trọng. Người dùng và quản trị viên phải được xác thực,
+phân quyền rõ ràng; mật khẩu cần được mã hóa và các API nghiệp vụ
+phải được bảo vệ. Giao diện cần dễ sử dụng, hoạt động tốt trên máy tính
+và thiết bị di động. Dữ liệu tài khoản, hội thoại, tài liệu và hoạt động cộng
+
+===== PAGE 19 =====
+18
+đồng phải được lưu trữ nhất quán. Các thành phần frontend, backend, cơ
+sở dữ liệu và dịch vụ AI phải có khả năng triển khai độc lập nhưng phối
+hợp chặt chẽ thông qua API.
+Như vậy, bài toán tổng quát của dự án là xây dựng một hệ sinh thái thư
+viện số không chỉ phục vụ việc lưu trữ và tra cứu tài liệu, mà còn hỗ trợ
+toàn diện quá trình học tập, nghiên cứu và trao đổi kiến thức. Giải pháp
+cần rút ngắn thời gian tìm kiếm, nâng cao độ chính xác của kết quả, cung
+cấp trợ lý học tập 24/7, tăng khả năng tương tác giữa người dùng và giảm
+khối lượng công việc lặp lại cho nhân viên quản lý. Đồng thời, kiến trúc
+hệ thống phải có khả năng mở rộng để tích hợp thêm nguồn dữ liệu học
+thuật, mô hình AI và các hệ thống quản lý thư viện khác trong tương lai.
+1.3. Xác định các tác nhân hệ thống
+Trong hệ thống thư viện số thông minh Library-AI, các tác nhân
+ngoài đóng vai trò quan trọng trong việc tương tác với hệ thống, thực hiện
+các nghiệp vụ học tập, quản lý tài liệu và khai thác tri thức bằng trí tuệ
+nhân tạo. Các tác nhân ngoài có thể là con người hoặc các hệ thống dịch
+vụ hỗ trợ. Dưới đây là phần giới thiệu về các tác nhân và mối quan hệ
+giữa chúng với hệ thống.
+Các tác nhân ngoài hệ thống
+- Con người:
++ Người dùng (User):
+Là người sử dụng hệ thống để tìm kiếm, đọc và tải tài liệu học tập.
+Người dùng có thể đăng ký, đăng nhập, quản lý bài viết, tham gia nhóm
+học tập, đánh giá tài liệu, lưu tài liệu yêu thích, sử dụng trợ lý AI để hỏi
+đáp trên tài liệu và trao đổi với các thành viên khác thông qua diễn đàn và
+nhóm học tập.
+
+===== PAGE 20 =====
+19
++ Giảng viên (Admin):
+Là người chịu trách nhiệm quản lý và vận hành hệ thống. Quản trị
+viên thực hiện các chức năng như quản lý tài liệu, quản lý nhóm học tập,
+quản lý người dùng, thống kê hệ thống, theo dõi hoạt động của người
+dùng và đảm bảo hệ thống hoạt động ổn định, an toàn. Ngoài ra, quản trị
+viên còn xử lý các yêu cầu quản trị và duy trì dữ liệu của hệ thống.
+- Hệ thống khác:
++ Dịch vụ AI (AI Service):
+Đây là dịch vụ trí tuệ nhân tạo được tích hợp với hệ thống
+Library-AI nhằm hỗ trợ người dùng tìm kiếm thông tin và trả lời câu hỏi
+dựa trên nội dung tài liệu. AI Service sử dụng mô hình
+Retrieval-Augmented Generation (RAG) để truy xuất các đoạn văn liên
+quan từ kho tài liệu, sau đó tạo câu trả lời kèm theo nguồn tham khảo,
+giúp nâng cao khả năng học tập và tra cứu của người dùng.
+- Tác nhân hệ thống:
++ Hệ quản trị cơ sở dữ liệu (Database Management System - DBMS):
+Là thành phần lưu trữ và quản lý toàn bộ dữ liệu của hệ thống, bao
+gồm thông tin người dùng, tài liệu, bài viết, nhóm học tập, đánh giá, lịch
+sử trò chuyện với AI và các dữ liệu quản trị khác. Hệ quản trị cơ sở dữ
+liệu đảm bảo việc truy xuất, cập nhật và lưu trữ dữ liệu được thực hiện
+chính xác, nhanh chóng và an toàn.
++ Hệ thống lưu trữ tài liệu (Document Storage):
+Là thành phần quản lý và lưu trữ các tệp tài liệu được tải lên hệ
+thống như PDF, Word hoặc các định dạng tài liệu khác. Hệ thống này
+cung cấp dữ liệu cho người dùng khi đọc hoặc tải xuống, đồng thời cung
+
+===== PAGE 21 =====
+20
+cấp nguồn dữ liệu cho AI Service trong quá trình lập chỉ mục và truy xuất
+nội dung.
+Mối quan hệ giữa các tác nhân và hệ thống
+Người dùng thực hiện các thao tác như đăng ký, đăng nhập, tìm
+kiếm tài liệu, đọc tài liệu, lưu tài liệu yêu thích, đánh giá tài liệu, quản lý
+bài viết, tham gia thảo luận nhóm và sử dụng trợ lý AI. Hệ thống tiếp
+nhận các yêu cầu, xử lý nghiệp vụ và lưu trữ dữ liệu trong cơ sở dữ liệu.
+Quản trị viên sử dụng hệ thống quản trị để quản lý tài liệu, quản lý
+người dùng, quản lý nhóm học tập, theo dõi hoạt động của hệ thống, xem
+báo cáo thống kê và bảo trì dữ liệu nhằm đảm bảo hệ thống vận hành ổn
+định và an toàn.
+Dịch vụ AI tiếp nhận câu hỏi từ hệ thống, truy xuất nội dung phù
+hợp từ kho tài liệu, sinh câu trả lời và trả kết quả về cho hệ thống để hiển
+thị cho người dùng. Quá trình này giúp người dùng khai thác thông tin
+nhanh chóng và hiệu quả hơn.
+Hệ quản trị cơ sở dữ liệu tiếp nhận các yêu cầu đọc, ghi và cập nhật
+dữ liệu từ hệ thống, đảm bảo dữ liệu luôn nhất quán và sẵn sàng phục vụ
+các chức năng của phần mềm.
+Hệ thống lưu trữ tài liệu cung cấp các tệp tài liệu cho người dùng
+khi xem hoặc tải xuống, đồng thời cung cấp nguồn dữ liệu cho AI Service
+để xây dựng cơ sở tri thức và hỗ trợ truy xuất thông tin.
+Các tác nhân ngoài phần mềm
+
+===== PAGE 22 =====
+21
+● Người dùng: Là đối tượng chính sử dụng hệ thống để tìm kiếm,
+đọc và khai thác tài liệu, tham gia diễn đàn và nhóm học tập, đồng
+thời sử dụng các chức năng học tập được tích hợp trong hệ thống.
+● Quản trị viên: Là người quản lý và vận hành toàn bộ hệ thống, chịu
+trách nhiệm quản lý tài liệu, người dùng, nhóm học tập, thống kê
+hệ thống và đảm bảo hệ thống hoạt động ổn định.
+● Dịch vụ AI: Là hệ thống trí tuệ nhân tạo tích hợp bên ngoài, hỗ trợ
+truy xuất thông tin từ kho tài liệu và sinh câu trả lời thông minh
+dựa trên nội dung tài liệu, góp phần nâng cao trải nghiệm học tập
+của người dùng.
+● Hệ quản trị cơ sở dữ liệu: Là hệ thống quản lý và lưu trữ dữ liệu
+của phần mềm, đảm bảo việc truy xuất và cập nhật dữ liệu diễn ra
+chính xác, ổn định và an toàn.
+● Hệ thống lưu trữ tài liệu: Là thành phần lưu trữ các tài liệu số của
+hệ thống, cung cấp dữ liệu cho người dùng và AI Service trong quá
+trình khai thác và xử lý thông tin.
+1.4. Phân tích yêu cầu chức năng và yêu cầu phi chức năng
+1.4.1. Phân tích yêu cầu chức năng
+- Phân tích trong công nghệ thông tin là quá trình tìm hiểu, thu thập
+và làm rõ các yêu cầu của người dùng hoặc khách hàng nhằm xác
+định vấn đề cần giải quyết và các chức năng mà hệ thống phải đáp
+ứng. Giai đoạn này tập trung vào việc trả lời các câu hỏi như: hệ
+thống cần thực hiện những gì, ai là người sử dụng, quy trình nghiệp
+vụ diễn ra như thế nào và các yêu cầu chức năng, phi chức năng
+của hệ thống là gì. Kết quả của quá trình phân tích là một cái nhìn
+
+===== PAGE 23 =====
+22
+đầy đủ về bài toán, làm cơ sở cho các bước thiết kế và phát triển
+phần mềm.
+- Đặc tả trong công nghệ thông tin là quá trình mô tả chi tiết các yêu
+cầu đã được phân tích thành một tài liệu rõ ràng, đầy đủ và không
+mơ hồ để nhóm phát triển có thể thiết kế, lập trình và kiểm thử hệ
+thống. Nội dung đặc tả thường bao gồm mô tả chức năng, dữ liệu
+đầu vào và đầu ra, quy trình xử lý, các quy tắc nghiệp vụ, điều kiện
+thực hiện, các trường hợp ngoại lệ và tiêu chí kiểm thử. Tài liệu
+đặc tả đóng vai trò là cầu nối giữa giai đoạn phân tích và giai đoạn
+thiết kế, giúp các bên liên quan có cùng cách hiểu về hệ thống cần
+xây dựng.
+- Định nghĩa yêu cầu chức năng : Yêu cầu chức năng là các tính
+năng, hành vi và dịch vụ cụ thể mà một hệ thống hoặc phần mềm
+phải thực hiện nhằm giúp người dùng hoàn thành nhiệm vụ và đáp
+ứng mục tiêu đề ra.
+- Sơ đồ usecase tổng quát
+
+===== PAGE 24 =====
+23
+● Đăng ký: Cho phép người dùng tạo tài khoản mới để sử dụng hệ
+thống.
+● Đăng nhập: Cho phép người dùng xác thực tài khoản và truy cập
+các chức năng được cấp quyền.
+
+===== PAGE 25 =====
+24
+● Quên/Đặt lại mật khẩu: Hỗ trợ người dùng khôi phục và thiết lập
+mật khẩu mới khi quên mật khẩu.
+● Quản lý hồ sơ: Cho phép người dùng xem, chỉnh sửa thông tin cá
+nhân và thay đổi mật khẩu.
+● Khai thác tài liệu: Cho phép tìm kiếm, xem chi tiết, yêu thích,
+bình luận và đánh giá tài liệu.
+● Quản lý nhóm học tập: Cho phép tạo nhóm, tham gia nhóm, quản
+lý thành viên và trao đổi trong nhóm.
+● Quản lý bài viết: Cho phép tạo, chỉnh sửa, xóa, bình luận và tương
+tác với bài viết trên diễn đàn.
+● Sử dụng trợ lý AI: Cho phép đặt câu hỏi, tra cứu nội dung tài liệu
+và nhận câu trả lời có nguồn tham khảo.
+● Xem tin tức: Cho phép theo dõi danh sách tin nổi bật và xem chi
+tiết các tin đã xuất bản.
+● Quản lý người dùng: Cho phép xem, tạo, cập nhật, phân quyền,
+khóa hoặc xóa tài khoản người dùng.
+● Quản lý tài liệu: Cho phép thêm, chỉnh sửa, xóa tài liệu và quản lý
+các danh mục tài liệu.
+● Kiểm duyệt diễn đàn: Cho phép quản lý danh mục, xử lý báo cáo
+và xóa các bài viết vi phạm.
+● Quản lý tin tức: Cho phép tạo, chỉnh sửa, xuất bản, đánh dấu nổi
+bật hoặc xóa tin tức.
+● Xem thống kê: Cho phép theo dõi số liệu tổng hợp về người dùng,
+tài liệu, diễn đàn, nhóm học tập và hoạt động hệ thống.
+1.4.2. Yêu cầu phi chức năng
+- Định nghĩa yêu cầu phi chức năng : Yêu cầu phi chức năng là các
+tiêu chuẩn mô tả cách thức hoạt động, chất lượng và các ràng buộc
+của một hệ thống, thay vì mô tả các tính năng cụ thể. Chúng xác
+
+===== PAGE 26 =====
+25
+định hệ thống phải thực hiện tốt ra sao qua các yếu tố như hiệu
+năng, bảo mật và độ tin cậy.
+Ngoài các yêu cầu chức năng, hệ thống Library-AI cần đáp ứng các
+yêu cầu phi chức năng nhằm đảm bảo hiệu quả, tính ổn định và trải
+nghiệm của người dùng.
+● Giao diện: Giao diện được thiết kế trực quan, thân thiện, dễ sử
+dụng và tương thích với các trình duyệt phổ biến như Google
+Chrome, Microsoft Edge và Mozilla Firefox.
+● Hiệu năng: Hệ thống có khả năng xử lý đồng thời tối thiểu 100
+người dùng trong điều kiện mạng ổn định. Thời gian phản hồi
+trung bình của các chức năng chính như đăng nhập, tìm kiếm tài
+liệu và truy cập trợ lý AI không vượt quá 2 giây, trong đó 95% số
+yêu cầu phải được xử lý trong thời gian dưới 3 giây. Tỷ lệ yêu cầu
+xử lý thành công đạt từ 99% trở lên, tỷ lệ lỗi phát sinh trong quá
+trình kiểm thử tải không vượt quá 1%, đồng thời mức sử dụng CPU
+và RAM của máy chủ không vượt quá 80% khi hệ thống hoạt động
+ở mức tải thiết kế.
+● Bảo mật: Hệ thống sử dụng cơ chế xác thực bằng JWT, mã hóa mật
+khẩu trước khi lưu trữ và phân quyền rõ ràng giữa người dùng và
+quản trị viên nhằm đảm bảo an toàn dữ liệu.
+● Độ tin cậy: Dữ liệu được lưu trữ nhất quán, hệ thống hoạt động ổn
+định và có cơ chế xử lý lỗi phù hợp để hạn chế ảnh hưởng đến
+người sử dụng.
+● Khả năng mở rộng và bảo trì: Hệ thống được xây dựng theo kiến
+trúc phân lớp kết hợp dịch vụ AI độc lập, giúp dễ dàng nâng cấp,
+bổ sung chức năng và bảo trì trong quá trình phát triển.
+
+===== PAGE 27 =====
+26
+Những yêu cầu phi chức năng trên góp phần đảm bảo hệ thống
+Library-AI hoạt động hiệu quả, an toàn và đáp ứng tốt nhu cầu học tập
+cũng như quản lý tài liệu của người dùng.
+1.4.3. Mô hình hóa chức năng
+1.4.3.1. Mô hình hóa chức năng Đăng nhập
+a. Biểu đồ phân rã usecase Đăng nhập
+b. Đặc tả chi tiết usecase Đăng nhập
+Mã Use UC_DangNhap Tên Đăng nhập
+Case UseCase
+Tác nhân Người dùng
+Mô tả Cho phép người dùng truy cập hệ thống bằng tên đăng nhập
+hoặc email và mật khẩu.
+Sự kiện kích Người dùng chọn nút “Đăng nhập”.
+hoạt chức
+năng
+Tiền điều Người dùng đã có tài khoản trong hệ thống.
+kiện
+Luồng sự Thực hiện bởi Hành động
+kiện chính
+1 Người dùng Mở trang đăng nhập.
+2 Hệ thống Hiển thị form gồm tên đăng
+nhập/email và mật khẩu.
+
+===== PAGE 28 =====
+27
+3 Người dùng Nhập thông tin và nhấn “Đăng
+nhập”.
+4 Hệ thống Kiểm tra dữ liệu đầu vào và tìm
+tài khoản theo username hoặc
+email.
+5 Hệ thống Đối chiếu mật khẩu bằng
+BCrypt và kiểm tra trạng thái tài
+khoản.
+6 Hệ thống Tạo JWT token, lưu thông tin
+phiên đăng nhập và chuyển
+người dùng đến trang thư viện.
+Luồng sự STT Thực hiện bởi Hành động
+kiện thay thế
+Hệ thống Nếu thiếu username/email hoặc
+mật khẩu, hệ thống yêu cầu
+nhập đầy đủ.
+Hệ thống Nếu tài khoản không tồn tại, hệ
+thống thông báo “Tài khoản
+không tồn tại”.
+Hệ thống Nếu mật khẩu không chính xác,
+hệ thống thông báo lỗi đăng
+nhập. .
+Hệ thống Nếu tài khoản bị khóa, hệ thống
+từ chối đăng nhập.
+
+===== PAGE 29 =====
+28
+Người dùng Có thể chọn “Quên mật khẩu?”
+để chuyển sang chức năng đặt
+lại mật khẩu.
+Hệ thống Tại bất kỳ thời điểm nào trong
+quá trình thực hiện use case nếu
+không kết nối được với cơ sở dữ
+liệu thì hệ thống sẽ hiển thị một
+thông báo lỗi và use case kết
+thúc.
+Hậu điều JWT token và thông tin người dùng được lưu; người dùng
+kiện được cấp quyền truy cập theo vai trò USER hoặc ADMIN.
+1.4.3.2. Mô hình hóa chức năng Quản lý bài viết
+a. Biểu đồ phân rã usecase Quản lý bài viết
+b. Đặc tả chi tiết usecase Quản lý bài viết
+Mã Use UC_QuanLyBaiViet Tên Use Case Quản lý bài viết
+Case
+Tác nhân Người dùng
+Mô tả Cho phép người dùng xem , tạo , sửa , xóa và tương tác với bài viết
+diễn đàn
+Sự kiện Người dùng chọn mục diễn đàn
+kích hoạt
+chức năng
+
+===== PAGE 30 =====
+29
+Tiền điều Người dùng đã đăng nhập vào hệ thống
+kiện
+Luồng sự STT Thực hiện bởi Hành động
+kiện chính
+1 Người dùng Mở mục “Diễn đàn”
+2 Hệ thống Hiển thị danh sách bài viết và chủ đề.
+3 Người dùng Xem, lọc hoặc chọn bài viết. .
+4 Hệ thống Hiển thị chi tiết bài viết và tăng lượt
+xem.
+5 Người dùng Tạo bài viết, nhập tiêu đề, chủ đề và nội
+dung.
+6 Hệ thống Kiểm tra và lưu bài viết.
+7 Người dùng Bình luận, thích/bỏ thích hoặc báo cáo
+bài viết.
+8 Hệ thống Lưu và cập nhật kết quả tương tác.
+9 Người dùng Chọn sửa hoặc xóa bài viết của mình.
+10 Hệ thống Kiểm tra quyền tác giả, sau đó cập nhật
+hoặc xóa bài viết cùng dữ liệu liên
+quan.
+Luồng sự STT Thực hiện bởi Hành động
+kiện thay
+
+===== PAGE 31 =====
+30
+thế 1 Hệ thống Nếu thiếu tiêu đề, chủ đề hoặc nội
+dung, hệ thống yêu cầu nhập lại.
+2 Hệ thống Người dùng hủy thao tác tạo hoặc sửa
+bài viết.
+3 Hệ thống Hệ thống không lưu thay đổi và quay
+lại trang trước.
+4 Quản trị viên Nếu người dùng không phải tác giả, hệ
+thống từ chối sửa hoặc xóa bài viết.
+5 Hệ thống Nếu bài viết không tồn tại, hệ thống
+hiển thị thông báo lỗi.
+6 Hệ thống Nếu báo cáo không có lý do hoặc đã có
+báo cáo PENDING, hệ thống từ chối
+gửi báo cáo.
+7 Hệ thống Tại bất kỳ thời điểm nào trong quá trình
+thực hiện use case nếu không kết nối
+được với cơ sở dữ liệu thì hệ thống sẽ
+hiển thị một thông báo lỗi và use case
+kết thúc.
+Hậu điều Bài viết và các tương tác được tạo, cập nhật hoặc xóa tương ứng
+kiện trong cơ sở dữ liệu.
+1.4.3.3. Mô hình hóa chức năng Quản lý tài liệu
+a. Biểu đồ phân rã usecase Quản lý tài liệu
+
+===== PAGE 32 =====
+31
+b. Đặc tả chi tiết usecase Quản lý tài liệu
+Mã Use Case UC_QuanLyTaiLieu Tên Use Quản lý tài liệu
+Case
+Tác nhân Quản trị viên
+Mô tả Cho phép quản trị viên thêm, xem, cập nhật và xóa tài
+liệu trong thư viện số.
+Sự kiện kích hoạt Quản trị viên chọn mục “Quản lý tài liệu” trên trang
+chức năng quản trị.
+Tiền điều kiện Quản trị viên đã đăng nhập và có quyền Admin
+Luồng sự kiện STT Thực hiện bởi Hành động
+chính
+1 Quản trị viên Chọn mục “Quản lý tài liệu”.
+2 Hệ thống Hiển thị danh sách tài liệu và
+danh mục.
+3 Quản trị viên Chọn thêm mới hoặc chọn một
+tài liệu cần cập nhật.
+4 Hệ thống Hiển thị form gồm tiêu đề, tác
+giả, mô tả, danh mục, file tài
+liệu và ảnh bìa.
+5 Quản trị viên Nhập hoặc cập nhật thông tin và
+gửi biểu mẫu.
+6 Hệ thống Kiểm tra dữ liệu và lưu thông
+tin, file tài liệu vào hệ thống.
+
+===== PAGE 33 =====
+32
+7 Hệ thống Gửi yêu cầu ingest hoặc đồng bộ
+nội dung PDF sang AI service.
+8 Quản trị viên Chọn tài liệu cần xóa.
+9 Hệ thống Xóa metadata, file, ảnh bìa, bình
+luận, yêu thích, đánh giá và
+vector liên quan.
+Luồng sự kiện STT Thực hiện bởi Hành động
+thay thế
+Hệ thống Nếu thiếu file tài liệu, hệ thống
+yêu cầu chọn file.
+Hệ thống Nếu file vượt quá 50 MB hoặc
+request vượt quá 60 MB, hệ
+thống từ chối tải lên.
+Hệ thống Nếu file không phải PDF khi xử
+lý AI, hệ thống thông báo không
+hỗ trợ định dạng.
+Quản trị viên Có thể hủy thao tác thêm hoặc
+cập nhật tài liệu.
+Hệ thống Nếu dữ liệu không hợp lệ hoặc
+lưu file thất bại, hệ thống hiển
+thị thông báo lỗi.
+Hệ thống Nếu AI service không hoạt
+động, tài liệu vẫn có thể được
+lưu nhưng chưa được đồng bộ
+
+===== PAGE 34 =====
+33
+vector.
+Quản trị viên Có thể hủy thao tác xóa tài liệu.
+Hệ thống Nếu tài liệu không tồn tại, hệ
+thống hiển thị thông báo lỗi.
+Hệ thống Tại bất kỳ thời điểm nào trong
+quá trình thực hiện use case nếu
+không kết nối được với cơ sở dữ
+liệu thì hệ thống sẽ hiển thị một
+thông báo lỗi và use case kết
+thúc.
+Hậu điều kiện Tài liệu và các dữ liệu liên quan được lưu, cập nhật hoặc
+xóa trong hệ thống. Nếu tài liệu là PDF và AI service
+hoạt động, nội dung được cập nhật vào kho vector để
+phục vụ tìm kiếm và hỏi đáp AI.
+1.4.3.4. Mô hình hóa chức năng Thống kê hệ thống
+a. Biểu đồ phân rã usecase Thống kê hệ thống
+b. Đặc tả chi tiết usecase Thống kê hệ thống
+Mã Use Case UC_ThongKeHeThong Tên Use Thống kê hệ
+Case thống
+Tác nhân Quản trị viên
+
+===== PAGE 35 =====
+34
+Mô tả Cho phép quản trị viên xem các số liệu tổng hợp về
+hoạt động của hệ thống.
+Sự kiện kích hoạt Quản trị viên truy cập trang “Dashboard” hoặc
+chức năng “Thống kê”.
+Tiền điều kiện Quản trị viên đã đăng nhập và có quyền Admin
+Luồng sự kiện STT Thực hiện bởi Hành động
+chính
+1 Quản trị viên Truy cập trang
+Dashboard.
+2 Hệ thống Gửi yêu cầu lấy dữ liệu
+thống kê
+3 Hệ thống Tính tổng số người dùng,
+tài liệu, bài viết diễn đàn
+và nhóm học tập.
+4 Hệ thống Tính tổng lượt xem tài
+liệu.
+5 Hệ thống Sắp xếp tài liệu theo lượt
+xem và lấy danh sách 5
+tài liệu nổi bật. .
+6 Hệ thống Trả dữ liệu thống kê và
+hiển thị lên Dashboard.
+7 Quản trị viên Xem các chỉ số và danh
+sách tài liệu nổi bật. .
+
+===== PAGE 36 =====
+35
+Luồng sự kiện thay STT Thực hiện bởi Hành động
+thế
+1 Hệ thống Nếu quản trị viên không
+có quyền ADMIN, hệ
+thống từ chối truy cập.
+2 Hệ thống Nếu chưa có dữ liệu, các
+chỉ số được hiển thị bằng
+0 hoặc danh sách rỗng.
+3 Hệ thống Nếu chưa có tài liệu, danh
+sách tài liệu nổi bật không
+có dữ liệu.
+4 Hệ thống Nếu không kết nối được
+cơ sở dữ liệu, hệ thống
+hiển thị thông báo lỗi.
+5 Hệ thống Tại bất kỳ thời điểm nào
+trong quá trình thực hiện
+use case nếu không kết
+nối được với cơ sở dữ liệu
+thì hệ thống sẽ hiển thị
+một thông báo lỗi và use
+case kết thúc.
+Hậu điều kiện Các số liệu thống kê được tổng hợp và hiển thị cho
+quản trị viên. Use Case không làm thay đổi dữ liệu
+nghiệp vụ của hệ thống.
+
+===== PAGE 37 =====
+36
+1.4.3.5. Mô hình hóa chức năng Quản lý nhóm (admin)
+a. Biểu đồ phân rã usecase Quản lý nhóm (admin)
+b. Đặc tả chi tiết usecase Quản lý nhóm (admin)
+Mã UC_QuanLyNhom_ Tên Use Case Quản lý nhóm
+Use Admin
+Case
+Tác Quản trị viên
+nhân
+Mô tả Cho phép quản trị viên xem, cập nhật, xóa nhóm học tập và xử lý
+yêu cầu tham gia nhóm.
+Sự Quản trị viên chọn chức năng “Quản lý nhóm học tập” trong
+kiện trang quản trị.
+kích
+hoạt
+chức
+năng
+Tiền Quản trị viên đã đăng nhập và có quyền Admin
+điều
+kiện
+Luồng STT Thực hiện Hành động
+sự kiện bởi
+chính
+1 Quản trị viên Mở danh sách nhóm học tập.
+2 Hệ thống Hiển thị các nhóm và thông tin thành viên.
+
+===== PAGE 38 =====
+37
+3 Quản trị viên Chọn một nhóm cần quản lý. .
+4 Hệ thống Hiển thị thông tin nhóm, thành viên, tin
+nhắn và yêu cầu tham gia. .
+5 Quản trị viên Cập nhật tên, mô tả, chủ đề hoặc chế độ
+hiển thị của nhóm. .
+6 Hệ thống Kiểm tra quyền và lưu thông tin nhóm.
+7 Quản trị viên Duyệt hoặc từ chối yêu cầu tham gia
+nhóm.
+8 Hệ thống Cập nhật trạng thái thành viên và gửi
+thông báo kết quả.
+9 Quản trị viên Chọn xóa nhóm và xác nhận thao tác.
+10 Hệ thống Xóa tin nhắn, thành viên và thông tin
+nhóm.
+Luồng STT Thực hiện Hành động
+sự kiện bởi
+thay
+1 Hệ thống Nếu chưa có nhóm, hệ thống hiển thị danh
+thế
+sách trống.
+2 Hệ thống Nếu nhóm không tồn tại, hệ thống hiển thị
+thông báo lỗi.
+3 Quản trị viên Có thể hủy thao tác cập nhật nhóm.
+4 Hệ thống Nếu tên nhóm không hợp lệ, hệ thống yêu
+
+===== PAGE 39 =====
+38
+cầu nhập lại.
+5 Hệ thống Nếu yêu cầu tham gia không thuộc nhóm,
+hệ thống từ chối xử lý. .
+6 Quản trị viên Có thể hủy thao tác xóa nhóm. .
+7 Hệ thống Nếu quản trị viên không có quyền, hệ
+thống từ chối cập nhật hoặc xóa nhóm.
+8 Hệ thống Tại bất kỳ thời điểm nào trong quá trình
+thực hiện use case nếu không kết nối được
+với cơ sở dữ liệu thì hệ thống sẽ hiển thị
+một thông báo lỗi và use case kết thúc.
+Hậu Thông tin nhóm, trạng thái thành viên hoặc dữ liệu nhóm được
+điều cập nhật, xóa và lưu tương ứng trong cơ sở dữ liệu.
+kiện
+1.4.3.6. Mô hình hóa chức năng Quản lý yêu thích
+
+===== PAGE 40 =====
+39
+a. Biểu đồ phân rã usecase Quản lý yêu thích
+b. Đặc tả chi tiết usecase Quản lý yêu thích
+Mã Use UC_QuanLyYeuThich Tên Quản lý yêu
+Case UseCas thích
+e
+Tác nhân Người dùng
+Mô tả Cho phép người dùng xem danh sách tài liệu yêu thích, thêm tài
+liệu vào yêu thích hoặc xóa tài liệu khỏi danh sách.
+Sự kiện Người dùng chọn mục “Yêu thích” hoặc nhấn biểu tượng yêu
+kích hoạt thích tại tài liệu.
+chức năng
+Tiền điều Người dùng đã đăng nhập và tài liệu cần thao tác tồn tại.
+kiện
+Luồng sự STT Thực hiện bởi Hành động
+kiện
+Người dùng Chọn mục “Yêu thích”.
+chính
+Hệ thống Hiển thị danh sách tài
+liệu người dùng đã yêu
+thích.
+Người dùng Chọn một tài liệu chưa
+yêu thích và nhấn biểu
+tượng yêu thích.
+Hệ thống Lưu tài liệu vào danh
+sách yêu thích và cập
+
+===== PAGE 41 =====
+40
+nhật trạng thái.
+Người dùng Chọn tài liệu đã yêu thích
+và nhấn biểu tượng bỏ
+yêu thích.
+Hệ thống Xóa tài liệu khỏi danh
+sách yêu thích và cập
+nhật trạng thái.
+Luồng sự Thực hiện bởi Hành động
+kiện thay
+STT Hệ thống Nếu chưa có tài liệu yêu
+thế
+thích, hiển thị thông báo
+danh sách trống.
+1 Hệ thống Nếu tài liệu đã được yêu
+thích, hệ thống không tạo
+bản ghi trùng.
+2 Hệ thống Nếu tài liệu chưa được
+yêu thích, hệ thống thông
+báo không thể bỏ yêu
+thích.
+3 Hệ thống Nếu tài liệu không tồn tại,
+hệ thống hiển thị thông
+báo lỗi.
+4 Hệ thống Nếu người dùng chưa
+đăng nhập, hệ thống yêu
+cầu đăng nhập trước khi
+
+===== PAGE 42 =====
+41
+sử dụng chức năng.
+5 Hệ thống Tại bất kỳ thời điểm nào
+trong quá trình thực hiện
+use case nếu không kết
+nối được với cơ sở dữ
+liệu thì hệ thống sẽ hiển
+thị một thông báo lỗi và
+use case kết thúc.
+Hậu điều Danh sách tài liệu phù hợp với từ khóa, danh mục và tiêu chí sắp
+kiện xếp được hiển thị. Dữ liệu tài liệu không bị thay đổi
+1.4.3.7. Mô hình hóa chức năng Đánh giá tài liệu
+a. Biểu đồ phân rã usecase Đánh giá tài liệu
+b. Đặc tả chi tiết usecase Đánh giá tài liệu
+Mã Use UC_DanhGiaTaiLieu Tên Đánh giá tài liệu
+Case UseCase
+Tác nhân Người dùng
+Mô tả Cho phép người dùng đánh giá tài liệu bằng số sao và xem
+điểm đánh giá của tài liệu.
+Sự kiện kích Người dùng mở chi tiết một tài liệu. .
+hoạt chức
+năng
+Tiền điều Người dùng đã đăng nhập và tài liệu tồn tại.
+kiện
+
+===== PAGE 43 =====
+42
+Luồng sự STT Thực hiện bởi Hành động
+kiện chính
+1 Người dùng Mở trang chi tiết tài liệu.
+2 Hệ thống Hiển thị thông tin tài liệu, điểm
+đánh giá trung bình và số lượt
+đánh giá.
+3 Người dùng Chọn số sao từ 1 đến 5.
+4 Hệ thống Kiểm tra giá trị đánh giá và lưu
+hoặc cập nhật đánh giá của
+người dùng.
+5 Hệ thống Tính lại điểm trung bình và số
+lượt đánh giá.
+6 Hệ thống Hiển thị kết quả đánh giá mới.
+Luồng sự STT Thực hiện bởi Hành động
+kiện thay thế
+1 Hệ thống Nếu số sao nhỏ hơn 1 hoặc lớn
+hơn 5, hệ thống từ chối đánh
+giá.
+2 Hệ thống
+Nếu người dùng đã đánh giá tài
+liệu, hệ thống cập nhật đánh giá
+cũ thay vì tạo bản ghi mới.
+4 Hệ thống Nếu tài liệu không tồn tại, hệ
+thống hiển thị thông báo lỗi.
+
+===== PAGE 44 =====
+43
+5 Người dùng Người dùng có thể hủy thao tác
+đánh giá trước khi gửi.
+6 Hệ thống Tại bất kỳ thời điểm nào trong
+quá trình thực hiện use case nếu
+không kết nối được với cơ sở dữ
+liệu thì hệ thống sẽ hiển thị một
+thông báo lỗi và use case kết
+thúc.
+Hậu điều Đánh giá của người dùng được lưu hoặc cập nhật; điểm trung
+kiện bình và số lượt đánh giá của tài liệu được cập nhật trong hệ
+thống.
+1.4.3.8. Mô hình hóa chức năng Tìm kiếm tài liệu
+a. Biểu đồ phân rã usecase Tìm kiếm tài liệu
+b. Đặc tả chi tiết usecase Tìm kiếm tài liệu
+Mã Use UC_TimKiemTaiLieu Tên Tìm kiếm tài
+Case UseCase liệu
+Tác nhân Người dùng
+Mô tả Cho phép người dùng tìm tài liệu theo tiêu đề, tác giả hoặc mô
+tả trong thư viện.
+Sự kiện Người dùng nhập từ khóa vào ô tìm kiếm tài liệu.
+kích hoạt
+chức năng
+Tiền điều Người dùng đã đăng nhập và truy cập trang thư viện.
+
+===== PAGE 45 =====
+44
+kiện
+Luồng sự Thực hiện Thực hiện Hành động
+kiện chính bởi bởi
+Người dùng Mở trang “Thư viện tài liệu”.
+Hệ thống Hiển thị danh sách tài liệu và
+ô tìm kiếm.
+Người dùng Nhập từ khóa tìm kiếm.
+Hệ thống Lọc tài liệu theo tiêu đề, tác giả
+hoặc mô tả.
+Người dùng Có thể chọn danh mục và cách
+sắp xếp kết quả.
+Hệ thống Hiển thị danh sách tài liệu phù
+hợp theo danh mục và thứ tự đã
+chọn.
+Luồng sự Thực hiện Hành động
+kiện thay bởi
+thế
+Người dùng Xóa từ khóa để xem lại toàn bộ
+tài liệu.
+Hệ thống Nếu không có tài liệu phù hợp,
+hệ thống hiển thị thông báo
+không tìm thấy kết quả.
+Người dùng Có thể sắp xếp theo mới nhất,
+
+===== PAGE 46 =====
+45
+tên A-Z hoặc mức độ phổ biến.
+Hệ thống Nếu danh mục không có tài
+liệu, hệ thống hiển thị danh
+sách trống.
+Hệ thống Tại bất kỳ thời điểm nào trong
+quá trình thực hiện use case
+nếu không kết nối được với cơ
+sở dữ liệu thì hệ thống sẽ hiển
+thị một thông báo lỗi và use
+case kết thúc.
+Hậu điều Tài liệu và các dữ liệu liên quan được lưu, cập
+kiện nhật hoặc xóa trong hệ thống. Nếu tài liệu là
+PDF và AI service hoạt động, nội dung được
+cập nhật vào kho vector để phục vụ tìm kiếm
+và hỏi đáp AI.
+1.4.3.9. Mô hình hóa chức năng Thảo luận nhóm
+a. Biểu đồ phân rã usecase Thảo luận nhóm
+b. Đặc tả chi tiết usecase Thảo luận nhóm
+Mã Use UC_ThaoLuanNhom Tên Thảo luận nhóm
+Case UseCase
+Tác nhân Người dùng, Quản trị viên.
+Mô tả Cho phép thành viên đã được phê duyệt xem lịch sử trao đổi,
+chọn kênh thảo luận, gửi tin nhắn và chia sẻ nội dung trong
+nhóm học tập.
+
+===== PAGE 47 =====
+46
+Sự kiện kích Người dùng chọn một nhóm mà mình đã tham gia.
+hoạt chức
+năng
+Tiền điều Người dùng đã đăng nhập và là chủ nhóm, quản trị viên hoặc
+kiện thành viên có trạng thái APPROVED.
+Luồng sự STT Thực hiện bởi Hành động
+kiện chính
+Người dùng .
+Mở nhóm học tập.
+Hệ thống
+Kiểm tra quyền truy cập nhóm.
+Hệ thống Hiển thị thông tin nhóm và lịch
+sử tin nhắn.
+Người dùng Chọn kênh thảo luận và nhập
+nội dung tin nhắn.
+Người dùng Nhấn nút gửi tin nhắn.
+Hệ thống .
+Kiểm tra nội dung và lưu tin
+nhắn vào nhóm.
+Hệ thống Hiển thị tin nhắn mới trong lịch
+sử thảo luận. .
+Luồng sự STT Thực hiện bởi Hành động
+kiện thay thế
+
+===== PAGE 48 =====
+47
+Hệ thống Nếu nhóm không tồn tại, hệ
+thống hiển thị thông báo lỗi.
+Hệ thống .
+Nếu người dùng chưa được
+duyệt, hệ thống từ chối xem và
+gửi tin nhắn. g.
+Người dùng Người dùng có thể chọn các
+kênh khác
+Hệ thống Nếu nội dung tin nhắn để trống,
+hệ thống yêu cầu nhập lại.
+Hệ thống Nếu kênh không hợp lệ, hệ
+thống chuyển về kênh mặc định
+Hệ thống Tại bất kỳ thời điểm nào trong
+quá trình thực hiện use case nếu
+không kết nối được với cơ sở dữ
+liệu thì hệ thống sẽ hiển thị một
+thông báo lỗi và use case kết
+thúc.
+Hậu điều Tin nhắn hợp lệ được lưu vào cơ sở dữ liệu và hiển thị cho
+kiện các thành viên có quyền truy cập nhóm.
+1.4.3.10. Mô hình hóa chức năng Trợ lý AI
+a. Biểu đồ phân rã usecase Trợ lý AI♦
+b. Đặc tả chi tiết usecase Trợ lý AI
+
+===== PAGE 49 =====
+48
+Mã Use UC_TroLyAI Tên UseCase Trợ lý AI
+Case
+Tác nhân Người dùng
+Mô tả Cho phép người dùng đặt câu hỏi, nhận câu trả lời dựa trên
+nội dung tài liệu PDF và xem lại lịch sử hội thoại.
+Sự kiện kích Người dùng mở chức năng Trợ lý AI và gửi câu hỏi.
+hoạt chức
+năng
+Tiền điều Người dùng đã đăng nhập.
+kiện
+Luồng sự STT Thực Hành động
+kiện chính hiện
+bởi
+1 Người Mở trang “Trợ lý AI”.
+dùng
+2 Hệ Hiển thị danh sách cuộc hội thoại và khung
+thống nhập câu hỏi.
+3 Người Tạo cuộc hội thoại mới hoặc chọn một cuộc
+dùng hội thoại trước đó.
+4 Người Nhập câu hỏi và gửi yêu cầu.
+dùng
+5 Hệ Kiểm tra câu hỏi, lưu tin nhắn người dùng và
+thống lấy lịch sử hội thoại gần nhất.
+
+===== PAGE 50 =====
+49
+6 Hệ Tìm các đoạn tài liệu PDF liên quan trong
+thống kho vector FAISS.
+AI
+7 Hệ Gửi câu hỏi, lịch sử và ngữ cảnh tài liệu đến
+thống mô hình Ollama.
+AI
+8 Hệ Nhận câu trả lời, kèm tên tài liệu và trang
+thống tham khảo nếu có.
+9 Hệ Lưu câu trả lời vào lịch sử và hiển thị cho
+thống người dùng.
+Luồng sự STT Thực Hành động
+kiện thay thế hiện
+bởi
+5a Hệ Nếu câu hỏi để trống hoặc vượt quá 5.000 ký
+thống tự, hệ thống yêu cầu nhập lại.
+6a Hệ Nếu không tìm thấy tài liệu phù hợp, hệ thống
+thống có thể trả lời bằng kiến thức chung của mô
+AI hình.
+Hệ Nếu AI service không phản hồi, hệ thống hiển
+thống thị thông báo lỗi.
+Người Có thể chọn xóa một cuộc hội thoại.
+dùng
+Hệ Xóa cuộc hội thoại và các tin nhắn liên quan.
+thống
+
+===== PAGE 51 =====
+50
+Hệ Tại bất kỳ thời điểm nào trong quá trình thực
+thống hiện use case nếu không kết nối được với cơ
+sở dữ liệu thì hệ thống sẽ hiển thị một thông
+báo lỗi và use case kết thúc.
+Hậu điều Câu hỏi và câu trả lời được lưu vào lịch sử hội thoại; người
+kiện dùng nhận được phản hồi AI và nguồn tài liệu nếu truy xuất
+được ngữ cảnh phù hợp.
+1.5. Xây dựng các mô hình nghiệp vụ cần thiết (nếu có)
+Kết luận chương 1
+
+===== PAGE 52 =====
+51
+Trong Chương 1, nhóm đã tiến hành khảo sát hiện trạng, xác định
+các khó khăn trong quá trình tìm kiếm, quản lý, khai thác và chia sẻ tài
+liệu học tập. Kết quả phân tích cho thấy người dùng cần một nền tảng tập
+trung, cho phép tiếp cận tài liệu số thuận tiện, hỗ trợ trao đổi kiến thức và
+khai thác nội dung tài liệu bằng trí tuệ nhân tạo.
+Trên cơ sở đó, nhóm đã xác định các tác nhân chính của hệ thống
+gồm người dùng, quản trị viên và dịch vụ AI. Các nhóm yêu cầu chức
+năng chính bao gồm quản lý tài khoản, quản lý và khai thác tài liệu, tìm
+kiếm, yêu thích, đánh giá, bình luận, diễn đàn, nhóm học tập, thông báo,
+thống kê và trợ lý AI. Trong đó, trợ lý AI sử dụng phương pháp
+Retrieval-Augmented Generation để truy xuất các đoạn nội dung liên
+quan từ kho tài liệu và tạo câu trả lời kèm nguồn tham khảo.
+Bên cạnh các yêu cầu chức năng, chương này cũng xác định các
+yêu cầu phi chức năng về bảo mật, hiệu năng, tính dễ sử dụng, độ ổn
+định, khả năng mở rộng và bảo trì hệ thống. Những yêu cầu và luồng
+nghiệp vụ đã phân tích là cơ sở để xây dựng kiến trúc tổng thể, thiết kế cơ
+sở dữ liệu, API, giao diện người dùng và các thành phần xử lý AI trong
+Chương 2.
+
+===== PAGE 53 =====
+52
+CHƯƠNG 2. THIẾT KẾ HỆ THỐNG WEBSITE THƯ VIỆN SỐ
+2.1. Thiết kế kiến trúc hệ thống
+2.1.1. Kiến trúc tổng thể của hệ thống
+- Library-AI được xây dựng theo mô hình Client–Server kết hợp
+kiến trúc ba tầng và kiến trúc hướng dịch vụ.
+- Hệ thống chưa phải microservices hoàn chỉnh vì các nghiệp vụ
+chính vẫn tập trung trong một ứng dụng Spring Boot và cùng sử
+dụng một cơ sở dữ liệu MySQL. Tuy nhiên, chức năng AI đã được
+tách thành một dịch vụ Fast API độc lập, có thể triển khai và mở
+rộng riêng.
+2.1.1.1. Kiến trúc ba tầng
+- Có thể phân chia hệ thống thành ba tầng :
+Tầng Thành phần Chức năng
+Presentation Layer React, Vite, Tailwind Hiển thị giao diện, tiếp nhận
+CSS thao tác và gửi yêu cầu API
+Business Logic Spring Boot và FastAPI Xác thực, phân quyền, xử lý
+Layer nghiệp vụ và xử lý AI
+Data Layer MySQL, thư mục Lưu dữ liệu nghiệp vụ, file tài
+upload, FAISS liệu và vector tài liệu
+2.1.1.3. Mô hình MVC trong backend
+Backend Spring Boot được tổ chức gần với mô hình MVC:
+● Controller: tiếp nhận HTTP request và trả HTTP response.
+
+===== PAGE 54 =====
+53
+● Service: xử lý quy tắc và luồng nghiệp vụ.
+● Entity/Model: biểu diễn dữ liệu nghiệp vụ.
+● Repository: truy cập MySQL thông qua Spring Data JPA.
+● DTO: truyền dữ liệu giữa client và server.
+Luồng xử lý cơ bản :
+2.1.2. Các thành phần của hệ thống
+2.1.3. Luồng xử lý dữ liệu trong hệ thống
+- Trình bày kiến trúc tổng thể của hệ thống (ví dụ: Client–Server,
+Three-tier Architecture, MVC, Microservices,...).
+
+===== PAGE 55 =====
+54
+-Mô tả các thành phần của hệ thống và mối quan hệ giữa các thành phần.
+-Mô tả luồng xử lý dữ liệu trong hệ thống.
+2.2. Thiết kế backend
+-Thiết kế chi tiết các chức năng và các module của hệ thống.
+- Thiết kế cơ sở dữ liệu từ các yêu cầu đã phân tích (ERD, bảng dữ liệu,
+khóa chính, khóa ngoại và các mối quan hệ).
+-Thiết kế API hoặc các dịch vụ xử lý dữ liệu (nếu có).
+2.3. Thiết kế frontend
+-Thiết kế cấu trúc giao diện người dùng.
+-Thiết kế các màn hình chính và luồng tương tác giữa các màn hình.
+-Đảm bảo giao diện đáp ứng đầy đủ các chức năng đã đặc tả.
+
+===== PAGE 56 =====
+55
+CHƯƠNG 3. XÂY DỰNG VÀ CÀI ĐẶT HỆ THỐNG WEBSITE THƯ
+VIỆN SỐ
+3.1. Cài đặt công cụ và phần mềm
+3.1.1. Công cụ phát triển
+3.1.2. Môi trường cài đặt và vận hành
+3.2. Cài đặt
+3.2.1. Mục tiêu phần cài đặt
+3.2.2. Chuẩn bị mã nguồn và công cụ
+3.2.3. Cấu trúc thư mục
+3.2.4. Thông số cấu hình và tùy chỉnh
+3.3. Xây dựng hệ thống
+3.3.1. Cài đặt cơ sở dữ liệu
+3.3.2. Xây dựng các chức năng backend
+3.3.3. Xây dựng giao diện frontend
+Lưu ý: Chương này tập trung vào quá trình hiện thực (implementation),
+không lặp lại nội dung thiết kế.
+
+===== PAGE 57 =====
+56
+CHƯƠNG 4. KIỂM THỬ VÀ ĐÁNH GIÁ WEBSITE THƯ VIỆN SỐ
+4.1. Mục tiêu và phương pháp kiểm thử.
+4.2. Kiểm thử hệ thống
+-Thiết kế các ca kiểm thử
+-Kết quả kiểm thử các chức năng chính.
+-Đánh giá mức độ đáp ứng các yêu cầu chức năng và phi chức năng.
+- Nhận xét về tính đúng đắn, độ ổn định, tính tin cậy và khả năng vận
+hành của hệ thống.
+4.3. Kết luận và hướng phát triển
+-Tóm tắt các kết quả đạt được.
+-Đánh giá những ưu điểm và hạn chế của hệ thống.
+-Đề xuất các hướng phát triển hoặc mở rộng trong tương lai.

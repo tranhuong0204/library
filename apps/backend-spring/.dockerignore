@@ -1,0 +1,14 @@
+
+target
+.mvn/wrapper/maven-wrapper.jar
+uploads
+*.log
+
+=======
+.idea
+.mvn
+target
+uploads
+.env
+*.log
+
