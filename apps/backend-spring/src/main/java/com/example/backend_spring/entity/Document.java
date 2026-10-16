@@ -49,7 +49,27 @@ public class Document {
         PENDING,    // Chờ duyệt bản quyền/nội dung
         TAKEDOWN    // Đã bị gỡ bỏ do vi phạm bản quyền
     }
-    // ------------------------------------
+    @Column(nullable = false)
+    private Boolean approved;
+
+    @Column(length = 255)
+    private String copyrightOwner;
+
+    @Column(length = 100)
+    private String copyrightCertificate;
+
+    private LocalDateTime takedownAt;
+
+    @Column(columnDefinition = "TEXT")
+    private String takedownReason;
+
+    @Builder.Default
+    @Column(nullable = false)
+    private Integer totalCopies = 1;
+
+    @Builder.Default
+    @Column(nullable = false)
+    private Integer availableCopies = 1;
 
     private String fileUrl;
 
@@ -95,5 +115,13 @@ public class Document {
 
         // Đồng bộ trạng thái approved theo status enum
         this.approved = (this.status == DocumentStatus.APPROVED);
+
+        if (this.totalCopies == null) {
+            this.totalCopies = 1;
+        }
+
+        if (this.availableCopies == null) {
+            this.availableCopies = this.totalCopies;
+        }
     }
 }

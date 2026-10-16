@@ -475,7 +475,27 @@ UPDATE news SET view_count = GREATEST(COALESCE(view_count, 0), 2156) WHERE id = 
 UPDATE news SET view_count = GREATEST(COALESCE(view_count, 0), 1673) WHERE id = 5;
 UPDATE news SET view_count = GREATEST(COALESCE(view_count, 0), 788) WHERE id = 6;
 UPDATE news SET view_count = GREATEST(COALESCE(view_count, 0), 542) WHERE id = 7;
-UPDATE news SET view_count = GREATEST(COALESCE(view_count, 0), 1109) WHERE id = 8;
+-- Demo data for document_copyrights and document_borrows
+INSERT IGNORE INTO document_copyrights (document_id, copyright_owner, author, license_type, certificate_number, registration_date, terms, created_at, updated_at)
+SELECT d.id, 'Nhà xuất bản Đại học Quốc gia', d.author, d.license_type, CONCAT('VN-COPYRIGHT-', LPAD(d.id, 4, '0')), DATE_SUB(NOW(), INTERVAL 60 DAY),
+       'Bản quyền thuộc tác giả và đơn vị xuất bản. Được phép sử dụng phục vụ mục đích học tập và nghiên cứu.', NOW(), NOW()
+FROM documents d;
+
+INSERT IGNORE INTO document_borrows (user_id, document_id, borrow_date, due_date, return_date, status, note, created_at, updated_at)
+SELECT u.id, d.id, DATE_SUB(NOW(), INTERVAL 5 DAY), DATE_ADD(NOW(), INTERVAL 9 DAY), NULL, 'BORROWED', 'Mượn tài liệu nghiên cứu chuyên ngành', DATE_SUB(NOW(), INTERVAL 5 DAY), NOW()
+FROM users u
+JOIN documents d ON d.id = 1
+WHERE u.username = 'user_demo';
+
+INSERT IGNORE INTO document_borrows (user_id, document_id, borrow_date, due_date, return_date, status, note, created_at, updated_at)
+SELECT u.id, d.id, DATE_SUB(NOW(), INTERVAL 20 DAY), DATE_SUB(NOW(), INTERVAL 6 DAY), DATE_SUB(NOW(), INTERVAL 7 DAY), 'RETURNED', 'Đã trả đúng hạn, sách còn nguyên vẹn', DATE_SUB(NOW(), INTERVAL 20 DAY), NOW()
+FROM users u
+JOIN documents d ON d.id = 2
+WHERE u.username = 'lan_anh';
+
+UPDATE documents SET total_copies = 10, available_copies = 8 WHERE id = 1;
+UPDATE documents SET total_copies = 5, available_copies = 5 WHERE id = 2;
+UPDATE documents SET total_copies = 15, available_copies = 12 WHERE id > 2;
 
 DROP TEMPORARY TABLE IF EXISTS demo_documents;
 DROP TEMPORARY TABLE IF EXISTS demo_ratings;
