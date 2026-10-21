@@ -87,12 +87,7 @@ const LibraryPage = lazy(pageLoaders.library);
 const DocumentDetailPage = lazy(pageLoaders.documentDetail);
 const FavoritesPage = lazy(pageLoaders.favorites);
 const AiWorkspacePage = lazy(pageLoaders.ai);
-const ForumFeedPage = lazy(pageLoaders.forum);
-const CreatePostPage = lazy(pageLoaders.createPost);
-const EditPostPage = lazy(pageLoaders.editPost);
-const PostDetailPage = lazy(pageLoaders.postDetail);
-const GroupListPage = lazy(pageLoaders.groups);
-const GroupDetailPage = lazy(pageLoaders.groupDetail);
+
 const NewsFeedPage = lazy(pageLoaders.news);
 const NewsDetailPage = lazy(pageLoaders.newsDetail);
 const NotificationsPage = lazy(pageLoaders.notifications);
@@ -103,10 +98,7 @@ const AdminDashboardPage = lazy(pageLoaders.adminDashboard);
 const AdminUsersPage = lazy(pageLoaders.adminUsers);
 const AdminDocumentsPage = lazy(pageLoaders.adminDocuments);
 const AdminCategoriesPage = lazy(pageLoaders.adminCategories);
-const AdminForumPage = lazy(pageLoaders.adminForum);
-const AdminForumCategoriesPage = lazy(pageLoaders.adminForumCategories);
 const AdminNewsPage = lazy(pageLoaders.adminNews);
-const AdminGroupsPage = lazy(pageLoaders.adminGroups);
 
 // Feedback Pages
 const ForbiddenPage = lazy(pageLoaders.forbidden);
@@ -131,12 +123,7 @@ export const AppRouter: React.FC = () => {
         <Route path="/library/:id" element={<ProtectedRoute><DocumentDetailPage /></ProtectedRoute>} />
         <Route path="/favorites" element={<ProtectedRoute><FavoritesPage /></ProtectedRoute>} />
         <Route path="/ai" element={<ProtectedRoute><AiWorkspacePage /></ProtectedRoute>} />
-        <Route path="/forum" element={<ProtectedRoute><ForumFeedPage /></ProtectedRoute>} />
-        <Route path="/forum/create" element={<ProtectedRoute><CreatePostPage /></ProtectedRoute>} />
-        <Route path="/forum/:id/edit" element={<ProtectedRoute><EditPostPage /></ProtectedRoute>} />
-        <Route path="/forum/:id" element={<ProtectedRoute><PostDetailPage /></ProtectedRoute>} />
-        <Route path="/groups" element={<ProtectedRoute><GroupListPage /></ProtectedRoute>} />
-        <Route path="/groups/:id" element={<ProtectedRoute><GroupDetailPage /></ProtectedRoute>} />
+
         <Route path="/news" element={<ProtectedRoute><NewsFeedPage /></ProtectedRoute>} />
         <Route path="/news/:id" element={<ProtectedRoute><NewsDetailPage /></ProtectedRoute>} />
         <Route path="/notifications" element={<ProtectedRoute><NotificationsPage /></ProtectedRoute>} />
@@ -148,11 +135,7 @@ export const AppRouter: React.FC = () => {
         <Route path="/admin/documents" element={<AdminRoute><AdminDocumentsPage /></AdminRoute>} />
         <Route path="/admin/documents/:id" element={<AdminRoute><DocumentDetailPage adminMode /></AdminRoute>} />
         <Route path="/admin/categories" element={<AdminRoute><AdminCategoriesPage /></AdminRoute>} />
-        <Route path="/admin/forum" element={<AdminRoute><AdminForumPage /></AdminRoute>} />
-        <Route path="/admin/forum/categories" element={<AdminRoute><AdminForumCategoriesPage /></AdminRoute>} />
         <Route path="/admin/news" element={<AdminRoute><AdminNewsPage /></AdminRoute>} />
-        <Route path="/admin/groups" element={<AdminRoute><AdminGroupsPage /></AdminRoute>} />
-        <Route path="/admin/groups/:id" element={<AdminRoute><GroupDetailPage adminMode /></AdminRoute>} />
 
         {/* Feedback & Fallback routes */}
         <Route path="/403" element={<ForbiddenPage />} />
