@@ -3,16 +3,12 @@ package com.example.backend_spring.controller;
 import com.example.backend_spring.entity.AiConversation;
 import com.example.backend_spring.entity.AiMessage;
 import com.example.backend_spring.entity.Document;
-import com.example.backend_spring.entity.ForumPost;
 import com.example.backend_spring.entity.User;
 import com.example.backend_spring.repository.AiConversationRepository;
 import com.example.backend_spring.repository.AiMessageRepository;
 import com.example.backend_spring.repository.CategoryRepository;
 import com.example.backend_spring.repository.DocumentRepository;
-import com.example.backend_spring.repository.ForumCategoryRepository;
-import com.example.backend_spring.repository.ForumPostRepository;
 import com.example.backend_spring.repository.NewsRepository;
-import com.example.backend_spring.repository.StudyGroupRepository;
 import com.example.backend_spring.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -36,26 +32,20 @@ public class AnalyticsController {
 
     private final UserRepository userRepository;
     private final DocumentRepository documentRepository;
-    private final ForumPostRepository forumPostRepository;
-    private final StudyGroupRepository studyGroupRepository;
     private final AiConversationRepository aiConversationRepository;
     private final AiMessageRepository aiMessageRepository;
     private final CategoryRepository categoryRepository;
-    private final ForumCategoryRepository forumCategoryRepository;
     private final NewsRepository newsRepository;
 
     @GetMapping("/dashboard")
     public ResponseEntity<?> getDashboardStats() {
         List<User> users = userRepository.findAll();
         List<Document> documents = documentRepository.findAll();
-        List<ForumPost> forumPosts = forumPostRepository.findAll();
         List<AiConversation> aiConversations = aiConversationRepository.findAll();
         List<AiMessage> aiMessages = aiMessageRepository.findAll();
 
         long totalUsers = users.size();
         long totalDocuments = documents.size();
-        long totalForumPosts = forumPosts.size();
-        long totalGroups = studyGroupRepository.count();
         long totalAiConversations = aiConversations.size();
         long totalAiMessages = aiMessages.size();
 
@@ -79,10 +69,10 @@ public class AnalyticsController {
         Map<String, Object> counts = new HashMap<>();
         counts.put("users", totalUsers);
         counts.put("documents", totalDocuments);
-        counts.put("posts", totalForumPosts);
-        counts.put("groups", totalGroups);
+        counts.put("posts", 0L);
+        counts.put("groups", 0L);
         counts.put("categories", categoryRepository.count());
-        counts.put("forumCategories", forumCategoryRepository.count());
+        counts.put("forumCategories", 0L);
         counts.put("news", newsRepository.count());
         counts.put("conversations", totalAiConversations);
         counts.put("aiMessages", totalAiMessages);
@@ -93,8 +83,8 @@ public class AnalyticsController {
         response.put("counts", counts);
         response.put("totalUsers", totalUsers);
         response.put("totalDocuments", totalDocuments);
-        response.put("totalForumPosts", totalForumPosts);
-        response.put("totalGroups", totalGroups);
+        response.put("totalForumPosts", 0L);
+        response.put("totalGroups", 0L);
         response.put("totalViews", totalViews);
         response.put("totalDownloads", totalDownloads);
         response.put("totalAiConversations", totalAiConversations);
@@ -110,7 +100,7 @@ public class AnalyticsController {
         response.put("trendingDocuments", trendingDocuments);
         response.put("topDocuments", trendingDocuments);
         response.put("documentEngagement", trendingDocuments);
-        response.put("systemGrowth", buildSystemGrowth(users, documents, forumPosts));
+        response.put("systemGrowth", buildSystemGrowth(users, documents));
         response.put("aiActivity", buildAiActivity(aiConversations, aiMessages));
 
         return ResponseEntity.ok(response);
@@ -118,8 +108,7 @@ public class AnalyticsController {
 
     private List<Map<String, Object>> buildSystemGrowth(
             List<User> users,
-            List<Document> documents,
-            List<ForumPost> forumPosts
+            List<Document> documents
     ) {
         List<Map<String, Object>> result = new ArrayList<>();
 
@@ -133,9 +122,7 @@ public class AnalyticsController {
             item.put("documents", documents.stream()
                     .filter(document -> isInMonth(document.getCreatedAt(), month))
                     .count());
-            item.put("posts", forumPosts.stream()
-                    .filter(post -> isInMonth(post.getCreatedAt(), month))
-                    .count());
+            item.put("posts", 0L);
             result.add(item);
         }
 
