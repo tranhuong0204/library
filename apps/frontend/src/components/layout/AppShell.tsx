@@ -3,8 +3,8 @@ import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import {
   Bell, BookOpen, ChevronRight, Heart, Home, LayoutDashboard, LogOut,
-  LibraryBig, Menu, MessageSquareCode, MessageSquareShare, Newspaper, Search,
-  Sparkles, User as UserIcon, Users, X,
+  LibraryBig, Menu, MessageSquareCode, Newspaper, Search,
+  Sparkles, User as UserIcon, X,
 } from 'lucide-react';
 import { useAuth } from '@/app/providers';
 import { preloadMainNavigation, preloadRoute } from '@/app/routePreloaders';
@@ -21,8 +21,6 @@ const navigationItems = [
   { label: 'Thư viện tài liệu', path: '/library', icon: BookOpen },
   { label: 'Tài liệu yêu thích', path: '/favorites', icon: Heart },
   { label: 'AI Workspace', path: '/ai', icon: MessageSquareCode },
-  { label: 'Diễn đàn', path: '/forum', icon: MessageSquareShare },
-  { label: 'Nhóm học tập', path: '/groups', icon: Users },
   { label: 'Tin tức', path: '/news', icon: Newspaper },
   { label: 'Thông báo', path: '/notifications', icon: Bell },
 ];

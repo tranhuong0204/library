@@ -8,12 +8,10 @@ import {
   Download,
   Eye,
   FileText,
-  MessageSquare,
   Quote,
   ShieldCheck,
   Sparkles,
   TrendingUp,
-  Users,
 } from 'lucide-react';
 import { useAuth } from '@/app/providers';
 import { apiClient } from '@/lib/api/client';
@@ -69,20 +67,6 @@ export default function HomePage() {
       icon: <Sparkles size={22} />,
       tone: 'violet',
       path: '/ai',
-    },
-    {
-      title: 'Diễn đàn',
-      description: 'Trao đổi bài tập, lỗi code và kinh nghiệm học tập cùng cộng đồng.',
-      icon: <MessageSquare size={22} />,
-      tone: 'amber',
-      path: '/forum',
-    },
-    {
-      title: 'Nhóm học tập',
-      description: 'Kết nối theo môn học, chia sẻ tài liệu và cùng nhau tiến bộ.',
-      icon: <Users size={22} />,
-      tone: 'emerald',
-      path: '/groups',
     },
   ];
 

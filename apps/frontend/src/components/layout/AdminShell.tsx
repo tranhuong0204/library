@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import {
-  ArrowLeft, ChevronRight, FileText, FolderTree, LayoutDashboard, LogOut,
-  Menu, Newspaper, ShieldCheck, Tags, UserRoundCog, Users, X,
+  ArrowLeft, ChevronRight, FileText, LayoutDashboard, LogOut,
+  Menu, Newspaper, Tags, Users, X,
 } from 'lucide-react';
 import { useAuth } from '@/app/providers';
 import { preloadRoute } from '@/app/routePreloaders';
@@ -16,10 +16,7 @@ const adminNavItems = [
   { label: 'Người dùng', path: '/admin/users', icon: Users },
   { label: 'Tài liệu', path: '/admin/documents', icon: FileText },
   { label: 'Danh mục tài liệu', path: '/admin/categories', icon: Tags },
-  { label: 'Quản lý diễn đàn', path: '/admin/forum', icon: ShieldCheck, end: true },
-  { label: 'Danh mục diễn đàn', path: '/admin/forum/categories', icon: FolderTree },
   { label: 'Tin tức & thông báo', path: '/admin/news', icon: Newspaper },
-  { label: 'Quản lý nhóm', path: '/admin/groups', icon: UserRoundCog },
 ];
 
 export const AdminShell = ({ children }: AdminShellProps) => {

@@ -47,32 +47,6 @@ public class AdminUserDeletionService {
                 """, userId);
         execute("delete from Document d where d.uploadedBy.id = :userId", userId);
 
-        execute("""
-                delete from ForumCommentLike l
-                where l.user.id = :userId
-                   or l.comment.user.id = :userId
-                   or l.comment.post.user.id = :userId
-                """, userId);
-        execute("""
-                delete from ForumPostLike l
-                where l.user.id = :userId or l.post.user.id = :userId
-                """, userId);
-        execute("""
-                delete from ForumComment c
-                where c.user.id = :userId or c.post.user.id = :userId
-                """, userId);
-        execute("delete from ForumPost p where p.user.id = :userId", userId);
-        execute("delete from ForumReport r where r.reporterId = :userId", userId);
-
-        execute("""
-                delete from GroupChat c
-                where c.user.id = :userId or c.group.createdBy.id = :userId
-                """, userId);
-        execute("""
-                delete from GroupMember m
-                where m.user.id = :userId or m.group.createdBy.id = :userId
-                """, userId);
-        execute("delete from StudyGroup g where g.createdBy.id = :userId", userId);
         execute("delete from Notification n where n.user.id = :userId", userId);
 
         userRepository.delete(user);
