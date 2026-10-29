@@ -293,6 +293,10 @@ public class AdminUserController {
             return Role.ADMIN;
         }
 
+        if (normalized.equals("3")) {
+            return Role.LIBRARIAN;
+        }
+
         if (normalized.startsWith("ROLE_")) {
             normalized = normalized.replace("ROLE_", "");
         }

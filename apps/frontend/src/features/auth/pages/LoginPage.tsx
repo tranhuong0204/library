@@ -55,7 +55,8 @@ export default function LoginPage() {
         'Đăng nhập thành công!',
         'Chào mừng bạn quay trở lại với LIBRARY.',
       );
-      navigate(returnUrl || (user.role === 'ADMIN' ? '/admin' : '/'), { replace: true });
+      const defaultRedirect = user.role === 'ADMIN' ? '/admin' : user.role === 'LIBRARIAN' ? '/admin/documents' : '/';
+      navigate(returnUrl || defaultRedirect, { replace: true });
     } catch (err: any) {
       setErrorMessage(err.message || 'Đăng nhập không thành công. Vui lòng kiểm tra lại.');
       toast.error('Đăng nhập thất bại.');

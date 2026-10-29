@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import {
   ArrowLeft, ChevronRight, FileText, LayoutDashboard, LogOut,
-  Menu, Newspaper, Tags, Users, X,
+  Menu, Newspaper, ShieldCheck, Tags, Users, X,
 } from 'lucide-react';
 import { useAuth } from '@/app/providers';
 import { preloadRoute } from '@/app/routePreloaders';
@@ -11,14 +11,6 @@ import { DropdownMenu } from '@/components/ui/DropdownMenu';
 
 interface AdminShellProps { children: React.ReactNode }
 
-const adminNavItems = [
-  { label: 'Tổng quan', path: '/admin', icon: LayoutDashboard, end: true },
-  { label: 'Người dùng', path: '/admin/users', icon: Users },
-  { label: 'Tài liệu', path: '/admin/documents', icon: FileText },
-  { label: 'Danh mục tài liệu', path: '/admin/categories', icon: Tags },
-  { label: 'Tin tức & thông báo', path: '/admin/news', icon: Newspaper },
-];
-
 export const AdminShell = ({ children }: AdminShellProps) => {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
@@ -26,20 +18,42 @@ export const AdminShell = ({ children }: AdminShellProps) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   useEffect(() => setMobileMenuOpen(false), [location.pathname]);
 
+  const isLibrarian = user?.role === 'LIBRARIAN';
+
+  const navItems = useMemo(() => {
+    if (isLibrarian) {
+      return [
+        { label: 'Tài liệu', path: '/admin/documents', icon: FileText },
+        { label: 'Danh mục tài liệu', path: '/admin/categories', icon: Tags },
+        { label: 'Quản lý bản quyền', path: '/admin/copyrights', icon: ShieldCheck },
+      ];
+    }
+    return [
+      { label: 'Tổng quan', path: '/admin', icon: LayoutDashboard, end: true },
+      { label: 'Người dùng', path: '/admin/users', icon: Users },
+      { label: 'Tài liệu', path: '/admin/documents', icon: FileText },
+      { label: 'Danh mục tài liệu', path: '/admin/categories', icon: Tags },
+      { label: 'Quản lý bản quyền', path: '/admin/copyrights', icon: ShieldCheck },
+      { label: 'Tin tức & thông báo', path: '/admin/news', icon: Newspaper },
+    ];
+  }, [isLibrarian]);
+
   const profileMenuItems = useMemo(() => [
     { label: 'Về trang chính', onClick: () => navigate('/'), icon: <ArrowLeft size={16} /> },
     { label: 'Đăng xuất', onClick: logout, icon: <LogOut size={16} />, danger: true },
   ], [logout, navigate]);
 
+  const defaultHomePath = isLibrarian ? '/admin/documents' : '/admin';
+
   const sidebar = (
     <>
-      <div className="shell-brand admin-brand" onClick={() => navigate('/admin')} role="button" tabIndex={0}>
+      <div className="shell-brand admin-brand" onClick={() => navigate(defaultHomePath)} role="button" tabIndex={0}>
         <span className="shell-brand-mark">LA</span>
-        <span><strong>Library AI</strong><small>Administration</small></span>
+        <span><strong>Library AI</strong><small>{isLibrarian ? 'Thủ thư (Librarian)' : 'Administration'}</small></span>
       </div>
-      <div className="shell-nav-label">Trung tâm quản trị</div>
+      <div className="shell-nav-label">{isLibrarian ? 'Nghiệp vụ thủ thư' : 'Trung tâm quản trị'}</div>
       <nav className="shell-nav" aria-label="Điều hướng quản trị">
-        {adminNavItems.map(({ label, path, icon: Icon, end }) => (
+        {navItems.map(({ label, path, icon: Icon, end }) => (
           <NavLink
             key={path}
             to={path}
@@ -72,18 +86,22 @@ export const AdminShell = ({ children }: AdminShellProps) => {
             <button className="icon-btn shell-menu-button" onClick={() => setMobileMenuOpen((open) => !open)} aria-label="Mở menu">
               {mobileMenuOpen ? <X size={21} /> : <Menu size={21} />}
             </button>
-            <div className="shell-breadcrumb"><span>Quản trị</span><ChevronRight size={13} /><strong>{adminNavItems.find((item) => item.path === location.pathname)?.label || 'Hệ thống'}</strong></div>
+            <div className="shell-breadcrumb">
+              <span>{isLibrarian ? 'Thủ thư' : 'Quản trị'}</span>
+              <ChevronRight size={13} />
+              <strong>{navItems.find((item) => item.path === location.pathname)?.label || 'Hệ thống'}</strong>
+            </div>
           </div>
           <div className="shell-header-actions">
             <button className="btn btn-sm btn-outline shell-back-button" onClick={() => navigate('/')}><ArrowLeft size={15} /> Về trang chính</button>
             <DropdownMenu
               trigger={
-                <button className="shell-user admin-user-trigger" aria-label="Mở menu quản trị viên">
+                <button className="shell-user admin-user-trigger" aria-label={isLibrarian ? 'Mở menu thủ thư' : 'Mở menu quản trị viên'}>
                   <div className="shell-user-copy">
-                    <strong>{user?.fullName || 'Quản trị viên'}</strong>
-                    <small>Administrator</small>
+                    <strong>{user?.fullName || (isLibrarian ? 'Thủ thư' : 'Quản trị viên')}</strong>
+                    <small>{isLibrarian ? 'Thủ thư' : 'Administrator'}</small>
                   </div>
-                  <Avatar fallback={user?.fullName || 'A'} size={40} />
+                  <Avatar fallback={user?.fullName || (isLibrarian ? 'L' : 'A')} size={40} />
                 </button>
               }
               items={profileMenuItems}

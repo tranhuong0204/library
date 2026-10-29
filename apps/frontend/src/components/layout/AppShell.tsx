@@ -64,6 +64,8 @@ export const AppShell = ({ children }: AppShellProps) => {
     { label: 'Hồ sơ cá nhân', onClick: () => navigate('/profile'), icon: <UserIcon size={16} /> },
     ...(user?.role === 'ADMIN'
       ? [{ label: 'Trang quản trị', onClick: () => navigate('/admin'), icon: <LayoutDashboard size={16} /> }]
+      : user?.role === 'LIBRARIAN'
+      ? [{ label: 'Nghiệp vụ thủ thư', onClick: () => navigate('/admin/documents'), icon: <BookOpen size={16} /> }]
       : []),
     { label: 'Đăng xuất', onClick: logout, icon: <LogOut size={16} />, danger: true },
   ], [logout, navigate, user?.role]);
@@ -159,11 +161,22 @@ export const AppShell = ({ children }: AppShellProps) => {
                 <LayoutDashboard size={15} /> Trang quản trị
               </button>
             )}
+            {user?.role === 'LIBRARIAN' && (
+              <button
+                className="btn btn-sm btn-outline shell-back-button shell-admin-entry-button"
+                onClick={() => navigate('/admin/documents')}
+              >
+                <BookOpen size={15} /> Nghiệp vụ thủ thư
+              </button>
+            )}
             <DropdownMenu
               trigger={
                 <button className="shell-user" aria-label="Mở menu tài khoản">
-                  <div className="shell-user-copy"><strong>{user?.fullName || 'Thành viên'}</strong><small>{user?.role === 'ADMIN' ? 'Quản trị viên' : 'Học viên'}</small></div>
-                  <Avatar fallback={user?.fullName || 'U'} size={40} />
+                  <div className="shell-user-copy">
+                    <strong>{user?.fullName || 'Thành viên'}</strong>
+                    <small>{user?.role === 'ADMIN' ? 'Quản trị viên' : user?.role === 'LIBRARIAN' ? 'Thủ thư' : 'Học viên'}</small>
+                  </div>
+                  <Avatar fallback={user?.fullName || (user?.role === 'LIBRARIAN' ? 'L' : 'U')} size={40} />
                 </button>
               }
               items={profileMenuItems}

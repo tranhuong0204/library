@@ -14,7 +14,8 @@ import type {
   NotificationItem,
   AiConversation,
   AiMessage,
-  ForumReport
+  ForumReport,
+  DocumentCopyrightItem
 } from '@/types';
 
 // Asset URL Resolver
@@ -284,5 +285,23 @@ export function normalizeForumReport(raw: any): ForumReport {
     resolvedAt: raw.resolvedAt ?? raw.ResolvedAt ?? null,
     resolvedBy: raw.resolvedBy ?? raw.ResolvedBy ?? null,
     adminNote: raw.adminNote ?? raw.AdminNote ?? null
+  };
+}
+
+export function normalizeCopyright(raw: any): DocumentCopyrightItem {
+  if (!raw) throw new Error('Cannot normalize empty copyright');
+  return {
+    id: raw.id ?? raw.Id ?? 0,
+    documentId: raw.documentId ?? raw.DocumentId ?? (raw.document?.id ?? 0),
+    documentTitle: raw.documentTitle ?? raw.DocumentTitle ?? (raw.document?.title ?? ''),
+    copyrightOwner: raw.copyrightOwner ?? raw.CopyrightOwner ?? '',
+    author: raw.author ?? raw.Author ?? '',
+    licenseType: raw.licenseType ?? raw.LicenseType ?? 'COPYRIGHT',
+    certificateNumber: raw.certificateNumber ?? raw.CertificateNumber ?? '',
+    registrationDate: raw.registrationDate ?? raw.RegistrationDate ?? '',
+    expirationDate: raw.expirationDate ?? raw.ExpirationDate ?? '',
+    terms: raw.terms ?? raw.Terms ?? '',
+    createdAt: raw.createdAt ?? raw.CreatedAt,
+    updatedAt: raw.updatedAt ?? raw.UpdatedAt
   };
 }

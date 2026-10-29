@@ -52,7 +52,7 @@ public class User {
 
     @PrePersist
     public void prePersist() {
-        if (Role.ADMIN.equals(this.role) || this.active == null) {
+        if (Role.ADMIN.equals(this.role) || Role.LIBRARIAN.equals(this.role) || this.active == null) {
             this.active = true;
         }
 
@@ -66,7 +66,7 @@ public class User {
 
     @PreUpdate
     public void preUpdate() {
-        if (Role.ADMIN.equals(this.role)) {
+        if (Role.ADMIN.equals(this.role) || Role.LIBRARIAN.equals(this.role)) {
             this.active = true;
         }
         this.updatedAt = LocalDateTime.now();

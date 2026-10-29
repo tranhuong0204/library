@@ -22,6 +22,7 @@ export const pageLoaders = {
   adminUsers: () => import('@/features/admin/pages/AdminUsersPage'),
   adminDocuments: () => import('@/features/admin/pages/AdminDocumentsPage'),
   adminCategories: () => import('@/features/admin/pages/AdminCategoriesPage'),
+  adminCopyrights: () => import('@/features/admin/pages/AdminCopyrightsPage'),
   adminNews: () => import('@/features/admin/pages/AdminNewsPage'),
   forbidden: () => import('@/components/feedback/ForbiddenPage'),
   notFound: () => import('@/components/feedback/NotFoundPage'),
@@ -41,6 +42,7 @@ const routeLoaders: Array<[test: (path: string) => boolean, load: PageLoader]> =
   [(path) => path === '/admin/users', pageLoaders.adminUsers],
   [(path) => path === '/admin/documents', pageLoaders.adminDocuments],
   [(path) => path === '/admin/categories', pageLoaders.adminCategories],
+  [(path) => path === '/admin/copyrights', pageLoaders.adminCopyrights],
   [(path) => path === '/admin/news', pageLoaders.adminNews],
 ];
 

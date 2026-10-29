@@ -76,14 +76,24 @@ public class SecurityConfig {
                         // Admin APIs
                         .requestMatchers("/api/admin", "/api/admin/**").hasRole("ADMIN")
                         .requestMatchers("/api/analytics", "/api/analytics/**").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.POST, "/api/documents").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.PUT, "/api/documents/**").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.DELETE, "/api/documents/{id:\\d+}").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.GET, "/api/categories/**").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/api/categories/**").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.PUT, "/api/categories/**").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.DELETE, "/api/categories/**").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.POST, "/api/groups").hasRole("ADMIN")
+
+                        // Document Management (ADMIN & LIBRARIAN)
+                        .requestMatchers(HttpMethod.POST, "/api/documents").hasAnyRole("ADMIN", "LIBRARIAN")
+                        .requestMatchers(HttpMethod.PUT, "/api/documents/**").hasAnyRole("ADMIN", "LIBRARIAN")
+                        .requestMatchers(HttpMethod.DELETE, "/api/documents/{id:\\d+}").hasAnyRole("ADMIN", "LIBRARIAN")
+
+                        // Category Management (ADMIN & LIBRARIAN)
+                        .requestMatchers(HttpMethod.GET, "/api/categories/**").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/api/categories/**").hasAnyRole("ADMIN", "LIBRARIAN")
+                        .requestMatchers(HttpMethod.PUT, "/api/categories/**").hasAnyRole("ADMIN", "LIBRARIAN")
+                        .requestMatchers(HttpMethod.DELETE, "/api/categories/**").hasAnyRole("ADMIN", "LIBRARIAN")
+
+                        // Copyright Management (ADMIN & LIBRARIAN)
+                        .requestMatchers(HttpMethod.GET, "/api/copyrights/**").authenticated()
+                        .requestMatchers(HttpMethod.POST, "/api/copyrights/**").hasAnyRole("ADMIN", "LIBRARIAN")
+                        .requestMatchers(HttpMethod.PUT, "/api/copyrights/**").hasAnyRole("ADMIN", "LIBRARIAN")
+                        .requestMatchers(HttpMethod.DELETE, "/api/copyrights/**").hasAnyRole("ADMIN", "LIBRARIAN")
 
                         // Các API còn lại bắt buộc đăng nhập
                         .anyRequest().authenticated()
@@ -152,12 +162,20 @@ public class SecurityConfig {
                 }
 
                 if (SecurityContextHolder.getContext().getAuthentication() == null) {
-                    List<SimpleGrantedAuthority> authorities = isAdmin(user)
-                            ? List.of(
-                            new SimpleGrantedAuthority("ROLE_ADMIN"),
-                            new SimpleGrantedAuthority("ROLE_USER")
-                    )
-                            : List.of(new SimpleGrantedAuthority("ROLE_USER"));
+                    List<SimpleGrantedAuthority> authorities;
+                    if (user != null && com.example.backend_spring.enums.Role.ADMIN.equals(user.getRole())) {
+                        authorities = List.of(
+                                new SimpleGrantedAuthority("ROLE_ADMIN"),
+                                new SimpleGrantedAuthority("ROLE_USER")
+                        );
+                    } else if (user != null && com.example.backend_spring.enums.Role.LIBRARIAN.equals(user.getRole())) {
+                        authorities = List.of(
+                                new SimpleGrantedAuthority("ROLE_LIBRARIAN"),
+                                new SimpleGrantedAuthority("ROLE_USER")
+                        );
+                    } else {
+                        authorities = List.of(new SimpleGrantedAuthority("ROLE_USER"));
+                    }
 
                     UsernamePasswordAuthenticationToken authentication =
                             new UsernamePasswordAuthenticationToken(
@@ -174,10 +192,6 @@ public class SecurityConfig {
             }
 
             filterChain.doFilter(request, response);
-        }
-
-        private boolean isAdmin(User user) {
-            return user != null && com.example.backend_spring.enums.Role.ADMIN.equals(user.getRole());
         }
     }
 }

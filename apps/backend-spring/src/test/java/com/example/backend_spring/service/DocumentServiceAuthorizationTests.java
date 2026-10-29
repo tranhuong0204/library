@@ -44,6 +44,14 @@ class DocumentServiceAuthorizationTests {
                 .build();
         when(userRepository.findByUsername("regular-user"))
                 .thenReturn(Optional.of(regularUser));
+
+        User librarianUser = User.builder()
+                .username("librarian-user")
+                .role(Role.LIBRARIAN)
+                .active(true)
+                .build();
+        when(userRepository.findByUsername("librarian-user"))
+                .thenReturn(Optional.of(librarianUser));
     }
 
     @Test
@@ -74,6 +82,15 @@ class DocumentServiceAuthorizationTests {
         assertThrows(
                 ForbiddenException.class,
                 () -> documentService.deleteDocument(1L, "regular-user")
+        );
+    }
+
+    @Test
+    void librarianUserPassesAuthorizationCheck() {
+        // If librarian calls deleteDocument, authorization passes and it proceeds to findById (throws ResourceNotFoundException instead of ForbiddenException)
+        assertThrows(
+                com.example.backend_spring.exception.ResourceNotFoundException.class,
+                () -> documentService.deleteDocument(999L, "librarian-user")
         );
     }
 }

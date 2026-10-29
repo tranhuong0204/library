@@ -128,7 +128,7 @@ public class DocumentService {
             throw new BadRequestException("Vui lòng chọn tệp tài liệu");
         }
 
-        User user = getAdminByUsername(username);
+        User user = getAdminOrLibrarianByUsername(username);
 
         Category category = categoryRepository.findById(categoryId)
                 .orElseThrow(() -> new ResourceNotFoundException("Không tìm thấy danh mục"));
@@ -177,7 +177,7 @@ public class DocumentService {
             MultipartFile documentFile,
             MultipartFile thumbnailFile,
             String username) {
-        getAdminByUsername(username);
+        getAdminOrLibrarianByUsername(username);
 
         Document document = documentRepository.findById(documentId)
                 .orElseThrow(() -> new ResourceNotFoundException("Không tìm thấy tài liệu"));
@@ -269,7 +269,7 @@ public class DocumentService {
     }
 
     public Map<String, Object> deleteDocument(Long documentId, String username) {
-        getAdminByUsername(username);
+        getAdminOrLibrarianByUsername(username);
         Document document = documentRepository.findById(documentId)
                 .orElseThrow(() -> new ResourceNotFoundException("Không tìm thấy tài liệu"));
 
@@ -499,10 +499,10 @@ public class DocumentService {
 
     public record DownloadedDocument(Path filePath, String fileName, Integer downloadCount) { }
 
-    private User getAdminByUsername(String username) {
+    private User getAdminOrLibrarianByUsername(String username) {
         User user = getUserByUsername(username);
-        if (!Role.ADMIN.equals(user.getRole())) {
-            throw new ForbiddenException("Chỉ quản trị viên được phép quản lý tài liệu.");
+        if (!Role.ADMIN.equals(user.getRole()) && !Role.LIBRARIAN.equals(user.getRole())) {
+            throw new ForbiddenException("Chỉ quản trị viên hoặc thủ thư được phép quản lý tài liệu.");
         }
         return user;
     }

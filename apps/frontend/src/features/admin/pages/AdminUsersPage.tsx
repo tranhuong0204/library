@@ -14,14 +14,14 @@ import { Input } from '@/components/ui/Input';
 import { showSuccessToast } from '@/components/feedback/SuccessToast';
 import { normalizeUser } from '@/lib/normalizers';
 import { toast } from 'sonner';
-import { Shield, ShieldAlert, Trash2, Edit, Plus, Eye } from 'lucide-react';
+import { Shield, ShieldAlert, Trash2, Edit, Plus, Eye, BookOpen } from 'lucide-react';
 
 interface UserDto {
   id: number;
   username: string;
   email: string;
   fullName: string;
-  role: 'USER' | 'ADMIN';
+  role: 'USER' | 'ADMIN' | 'LIBRARIAN';
   active: boolean;
   createdAt?: string;
 }
@@ -31,7 +31,7 @@ interface UserFormData {
   email: string;
   fullName: string;
   password: string;
-  role: 'USER' | 'ADMIN';
+  role: 'USER' | 'ADMIN' | 'LIBRARIAN';
 }
 
 const emptyUserForm: UserFormData = {
@@ -44,7 +44,7 @@ export default function AdminUsersPage() {
   // Role Dialog states
   const [selectedUser, setSelectedUser] = useState<UserDto | null>(null);
   const [isRoleOpen, setIsRoleOpen] = useState(false);
-  const [selectedRole, setSelectedRole] = useState<'USER' | 'ADMIN'>('USER');
+  const [selectedRole, setSelectedRole] = useState<'USER' | 'ADMIN' | 'LIBRARIAN'>('USER');
 
   // Delete User states
   const [deletingId, setDeletingId] = useState<number | null>(null);
@@ -116,7 +116,7 @@ export default function AdminUsersPage() {
 
   // Mutation: Change User Role
   const changeRoleMutation = useMutation({
-    mutationFn: async (payload: { id: number; role: 'USER' | 'ADMIN' }) => {
+    mutationFn: async (payload: { id: number; role: 'USER' | 'ADMIN' | 'LIBRARIAN' }) => {
       const res = await apiClient.put(`/admin/users/${payload.id}/role`, {
         role: payload.role,
       });
@@ -230,10 +230,27 @@ export default function AdminUsersPage() {
       header: 'Quyền hạn',
       accessor: (row: UserDto) => {
         const isAdmin = row.role === 'ADMIN';
+        const isLibrarian = row.role === 'LIBRARIAN';
+        if (isAdmin) {
+          return (
+            <Badge variant="warning" style={{ gap: '4px' }}>
+              <ShieldAlert size={10} />
+              <span>Quản trị viên</span>
+            </Badge>
+          );
+        }
+        if (isLibrarian) {
+          return (
+            <Badge variant="info" style={{ gap: '4px' }}>
+              <BookOpen size={10} />
+              <span>Thủ thư</span>
+            </Badge>
+          );
+        }
         return (
-          <Badge variant={isAdmin ? 'warning' : 'primary'} style={{ gap: '4px' }}>
-            {isAdmin ? <ShieldAlert size={10} /> : <Shield size={10} />}
-            <span>{isAdmin ? 'Quản trị viên' : 'Học viên'}</span>
+          <Badge variant="primary" style={{ gap: '4px' }}>
+            <Shield size={10} />
+            <span>Học viên</span>
           </Badge>
         );
       },
@@ -286,7 +303,8 @@ export default function AdminUsersPage() {
 
   const roleOptions = [
     { value: 'USER', label: 'Học viên (Quyền truy cập tiêu chuẩn)' },
-    { value: 'ADMIN', label: 'Quản trị viên (Toàn quyền)' },
+    { value: 'LIBRARIAN', label: 'Thủ thư (Quản lý tài liệu, danh mục & bản quyền)' },
+    { value: 'ADMIN', label: 'Quản trị viên (Toàn quyền hệ thống)' },
   ];
 
   return (
@@ -329,7 +347,7 @@ export default function AdminUsersPage() {
             <span style={{ color: 'var(--color-slate-500)' }}>Email</span>
             <strong>{viewingUser.email}</strong>
             <span style={{ color: 'var(--color-slate-500)' }}>Vai trò</span>
-            <strong>{viewingUser.role === 'ADMIN' ? 'Quản trị viên' : 'Học viên'}</strong>
+            <strong>{viewingUser.role === 'ADMIN' ? 'Quản trị viên' : viewingUser.role === 'LIBRARIAN' ? 'Thủ thư' : 'Học viên'}</strong>
             <span style={{ color: 'var(--color-slate-500)' }}>Trạng thái</span>
             <strong style={{ color: viewingUser.active ? 'var(--color-success-600)' : 'var(--color-danger-600)' }}>
               {viewingUser.active ? 'Đang hoạt động' : 'Đã khóa'}

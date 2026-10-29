@@ -1,4 +1,4 @@
-export type Role = 'USER' | 'ADMIN';
+export type Role = 'USER' | 'ADMIN' | 'LIBRARIAN';
 export type NewsStatus = 'DRAFT' | 'PUBLISHED';
 export type ReportStatus = 'PENDING' | 'RESOLVED' | 'REJECTED';
 
@@ -36,6 +36,21 @@ export interface DocumentItem {
   categoryName: string;
   uploadedByName: string;
   createdAt: string;
+}
+
+export interface DocumentCopyrightItem {
+  id: number;
+  documentId: number;
+  documentTitle?: string;
+  copyrightOwner: string;
+  author?: string;
+  licenseType: string;
+  certificateNumber?: string;
+  registrationDate?: string;
+  expirationDate?: string;
+  terms?: string;
+  createdAt?: string;
+  updatedAt?: string;
 }
 
 export interface DocumentComment {

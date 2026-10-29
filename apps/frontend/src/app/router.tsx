@@ -40,14 +40,15 @@ const PublicRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   if (isLoading) return <PageLoader />;
 
   if (isAuthenticated) {
-    const destination = returnUrl ? decodeURIComponent(returnUrl) : (user?.role === 'ADMIN' ? '/admin' : '/');
+    const defaultDestination = user?.role === 'ADMIN' ? '/admin' : user?.role === 'LIBRARIAN' ? '/admin/documents' : '/';
+    const destination = returnUrl ? decodeURIComponent(returnUrl) : defaultDestination;
     return <Navigate to={destination} replace />;
   }
 
   return <>{children}</>;
 };
 
-const AdminRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+const AdminOnlyRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { user, isAuthenticated, isLoading } = useAuth();
 
   if (isLoading) return <PageLoader />;
@@ -56,7 +57,27 @@ const AdminRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     return <Navigate to="/login" replace />;
   }
 
+  if (user?.role === 'LIBRARIAN') {
+    return <Navigate to="/admin/documents" replace />;
+  }
+
   if (user?.role !== 'ADMIN') {
+    return <Navigate to="/403" replace />;
+  }
+
+  return <>{children}</>;
+};
+
+const ManagementRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const { user, isAuthenticated, isLoading } = useAuth();
+
+  if (isLoading) return <PageLoader />;
+
+  if (!isAuthenticated) {
+    return <Navigate to="/login" replace />;
+  }
+
+  if (user?.role !== 'ADMIN' && user?.role !== 'LIBRARIAN') {
     return <Navigate to="/403" replace />;
   }
 
@@ -98,6 +119,7 @@ const AdminDashboardPage = lazy(pageLoaders.adminDashboard);
 const AdminUsersPage = lazy(pageLoaders.adminUsers);
 const AdminDocumentsPage = lazy(pageLoaders.adminDocuments);
 const AdminCategoriesPage = lazy(pageLoaders.adminCategories);
+const AdminCopyrightsPage = lazy(pageLoaders.adminCopyrights);
 const AdminNewsPage = lazy(pageLoaders.adminNews);
 
 // Feedback Pages
@@ -129,13 +151,21 @@ export const AppRouter: React.FC = () => {
         <Route path="/notifications" element={<ProtectedRoute><NotificationsPage /></ProtectedRoute>} />
         <Route path="/profile" element={<ProtectedRoute><ProfilePage /></ProtectedRoute>} />
 
-        {/* Admin Shell routes */}
-        <Route path="/admin" element={<AdminRoute><AdminDashboardPage /></AdminRoute>} />
-        <Route path="/admin/users" element={<AdminRoute><AdminUsersPage /></AdminRoute>} />
-        <Route path="/admin/documents" element={<AdminRoute><AdminDocumentsPage /></AdminRoute>} />
-        <Route path="/admin/documents/:id" element={<AdminRoute><DocumentDetailPage adminMode /></AdminRoute>} />
-        <Route path="/admin/categories" element={<AdminRoute><AdminCategoriesPage /></AdminRoute>} />
-        <Route path="/admin/news" element={<AdminRoute><AdminNewsPage /></AdminRoute>} />
+        {/* Management & Admin Shell routes */}
+        <Route path="/admin" element={<AdminOnlyRoute><AdminDashboardPage /></AdminOnlyRoute>} />
+        <Route path="/admin/users" element={<AdminOnlyRoute><AdminUsersPage /></AdminOnlyRoute>} />
+        <Route path="/admin/documents" element={<ManagementRoute><AdminDocumentsPage /></ManagementRoute>} />
+        <Route path="/admin/documents/:id" element={<ManagementRoute><DocumentDetailPage adminMode /></ManagementRoute>} />
+        <Route path="/admin/categories" element={<ManagementRoute><AdminCategoriesPage /></ManagementRoute>} />
+        <Route path="/admin/copyrights" element={<ManagementRoute><AdminCopyrightsPage /></ManagementRoute>} />
+        <Route path="/admin/news" element={<AdminOnlyRoute><AdminNewsPage /></AdminOnlyRoute>} />
+
+        {/* Librarian Direct / Alias routes */}
+        <Route path="/librarian" element={<Navigate to="/admin/documents" replace />} />
+        <Route path="/librarian/documents" element={<ManagementRoute><AdminDocumentsPage /></ManagementRoute>} />
+        <Route path="/librarian/documents/:id" element={<ManagementRoute><DocumentDetailPage adminMode /></ManagementRoute>} />
+        <Route path="/librarian/categories" element={<ManagementRoute><AdminCategoriesPage /></ManagementRoute>} />
+        <Route path="/librarian/copyrights" element={<ManagementRoute><AdminCopyrightsPage /></ManagementRoute>} />
 
         {/* Feedback & Fallback routes */}
         <Route path="/403" element={<ForbiddenPage />} />

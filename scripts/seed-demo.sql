@@ -21,6 +21,12 @@ WHERE username = 'user_demo';
 -- community pages look representative. Their password is also User@123456.
 INSERT IGNORE INTO users
     (username, email, password, full_name, major, role, active, created_at, updated_at)
+SELECT 'librarian_demo', 'librarian@libria.local', password, 'Thủ thư Nguyễn Văn Thư', 'Quản trị thông tin thư viện',
+       'LIBRARIAN', b'1', DATE_SUB(NOW(), INTERVAL 90 DAY), NOW()
+FROM users WHERE username = 'user_demo' LIMIT 1;
+
+INSERT IGNORE INTO users
+    (username, email, password, full_name, major, role, active, created_at, updated_at)
 SELECT 'lan_anh', 'lan.anh@libria.local', password, 'Lê Lan Anh', 'Ngôn ngữ Anh',
        'USER', b'1', DATE_SUB(NOW(), INTERVAL 95 DAY), NOW()
 FROM users WHERE username = 'user_demo' LIMIT 1;
