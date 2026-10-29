@@ -75,13 +75,13 @@ export default function FavoritesPage() {
             <Card
               key={doc.id}
               hoverable
+              className="library-document-card"
               onClick={() => navigate(`/library/${doc.id}`)}
               style={{ cursor: 'pointer', display: 'flex', flexDirection: 'column', height: '100%' }}
             >
               <div
+                className="library-card-cover"
                 style={{
-                  height: '160px',
-                  backgroundColor: 'var(--color-slate-100)',
                   position: 'relative',
                   overflow: 'hidden',
                   display: 'flex',

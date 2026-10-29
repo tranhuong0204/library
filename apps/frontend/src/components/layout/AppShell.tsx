@@ -3,7 +3,7 @@ import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import {
   Bell, BookOpen, ChevronRight, Heart, Home, LayoutDashboard, LogOut,
-  LibraryBig, Menu, MessageSquareCode, Newspaper, Search,
+  Menu, MessageSquareCode, Newspaper, Search,
   Sparkles, User as UserIcon, X,
 } from 'lucide-react';
 import { useAuth } from '@/app/providers';
@@ -13,6 +13,7 @@ import { normalizeNotification } from '@/lib/normalizers';
 import { buildLibrarySearchPath, findActiveNavigationItem } from '@/lib/navigation';
 import { Avatar } from '@/components/ui/Avatar';
 import { DropdownMenu } from '@/components/ui/DropdownMenu';
+import { BrandLogo } from '@/components/ui/BrandLogo';
 
 interface AppShellProps { children: React.ReactNode }
 
@@ -81,11 +82,7 @@ export const AppShell = ({ children }: AppShellProps) => {
         role="button"
         tabIndex={0}
       >
-        <span className="shell-brand-mark"><LibraryBig size={21} strokeWidth={2.2} /></span>
-        <span>
-          <strong>Library AI</strong>
-          <small>Knowledge workspace</small>
-        </span>
+        <BrandLogo subtitle="Knowledge Workspace" variant="light" />
       </div>
       <div className="shell-nav-label">Không gian làm việc</div>
       <nav className="shell-nav" aria-label="Điều hướng chính">

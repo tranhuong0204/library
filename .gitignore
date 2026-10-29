@@ -22,7 +22,7 @@ build/
 *.njsproj
 *.sln
 *.swp
-
+ui.md
 # Local configuration files
 .env
 .env.docker

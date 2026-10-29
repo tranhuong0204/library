@@ -3,14 +3,15 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
+import { ArrowLeft, ArrowRight, ShieldCheck } from 'lucide-react';
 import { useAuth } from '@/app/providers';
 import { apiClient } from '@/lib/api/client';
 import { normalizeUser } from '@/lib/normalizers';
 import { Input, PasswordInput } from '@/components/ui/Input';
 import { Button } from '@/components/ui/Button';
+import { BrandLogo } from '@/components/ui/BrandLogo';
 import { showSuccessToast } from '@/components/feedback/SuccessToast';
 import { toast } from 'sonner';
-import { BookOpen } from 'lucide-react';
 
 const loginSchema = z.object({
   usernameOrEmail: z.string().min(1, 'Vui lòng nhập tên đăng nhập hoặc email'),
@@ -45,17 +46,16 @@ export default function LoginPage() {
     setErrorMessage(null);
     try {
       const res = await apiClient.post('/auth/login', data);
-      
       const token = res.data.token;
-      // DTO normalization
       const user = normalizeUser(res.data);
-      
+
       login(token, user);
       showSuccessToast(
         'Đăng nhập thành công!',
-        'Chào mừng bạn quay trở lại với LIBRARY.',
+        'Chào mừng bạn quay trở lại với Library AI.',
       );
-      const defaultRedirect = user.role === 'ADMIN' ? '/admin' : user.role === 'LIBRARIAN' ? '/admin/documents' : '/';
+      const defaultRedirect =
+        user.role === 'ADMIN' ? '/admin' : user.role === 'LIBRARIAN' ? '/admin/documents' : '/';
       navigate(returnUrl || defaultRedirect, { replace: true });
     } catch (err: any) {
       setErrorMessage(err.message || 'Đăng nhập không thành công. Vui lòng kiểm tra lại.');
@@ -66,154 +66,164 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="auth-shell" style={{ minHeight: '100vh', display: 'flex', backgroundColor: '#f8fafc' }}>
-      {/* Visual Branding Split Banner (hidden on mobile) */}
-      <div
-        className="login-visual-side auth-visual"
-        style={{
-          flex: 1,
-          backgroundColor: 'var(--color-primary-950)',
-          color: 'white',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between',
-          padding: 'var(--spacing-12)',
-          position: 'relative',
-          overflow: 'hidden',
-        }}
-      >
-        {/* Subtle glow layer */}
-        <div
-          style={{
-            position: 'absolute',
-            top: '-10%',
-            right: '-10%',
-            width: '400px',
-            height: '400px',
-            borderRadius: '50%',
-            background: 'radial-gradient(circle, rgba(20, 184, 166, 0.15) 0%, transparent 70%)',
-            filter: 'blur(40px)',
-          }}
-        />
-
-        <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-2)', zIndex: 10 }}>
-          <BookOpen size={24} style={{ color: 'var(--color-accent-400)' }} />
-          <span style={{ fontSize: 'var(--text-lg)', fontWeight: 800, letterSpacing: '1px' }}>
-            LIBRARY
-          </span>
-        </div>
-
-        <div style={{ zIndex: 10, maxWidth: '440px' }}>
-          <h2 style={{ fontSize: 'var(--text-3xl)', color: 'white', fontWeight: 800, lineHeight: '1.2', marginBottom: 'var(--spacing-4)' }}>
-            Nền tảng tri thức & Học tập thông minh hỗ trợ bởi AI
-          </h2>
-          <p style={{ color: 'var(--color-slate-300)', fontSize: 'var(--text-sm)', lineHeight: '1.6' }}>
-            Tìm kiếm tài liệu học tập tối ưu, trò chuyện với trợ lý học thuật AI của bạn, thảo luận diễn đàn và cùng cộng tác với các nhóm học tập tại một không gian tập trung.
-          </p>
-        </div>
-
-        <div style={{ color: 'var(--color-slate-400)', fontSize: 'var(--text-xs)', zIndex: 10 }}>
-          &copy; {new Date().getFullYear()} Đội ngũ phát triển LIBRARY. Đạt chuẩn giáo dục số.
-        </div>
+    <div className="herbarium-page-wrap">
+      {/* Top Navigation Bar */}
+      <div className="herbarium-topbar">
+        <Link to="/" className="herbarium-back-link" aria-label="Trở về trang chủ thư viện">
+          <ArrowLeft size={16} />
+          <span>Về trang chủ</span>
+        </Link>
+        <BrandLogo compact size="sm" />
       </div>
 
-      {/* Form Content Side */}
-      <div
-        style={{
-          width: '100%',
-          maxWidth: '480px',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          padding: 'var(--spacing-8) var(--spacing-10)',
-          backgroundColor: 'white',
-          boxShadow: '-4px 0 24px rgba(0, 0, 0, 0.02)',
-        }}
-        className="login-form-side auth-form-panel"
-      >
-        <div style={{ marginBottom: 'var(--spacing-8)' }}>
-          <h1 style={{ fontSize: 'var(--text-2xl)', fontWeight: 850, color: 'var(--color-primary-950)', marginBottom: 'var(--spacing-1)' }}>
-            Chào mừng quay lại
-          </h1>
-          <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-slate-400)' }}>
-            Đăng nhập vào tài khoản LIBRARY của bạn
-          </p>
-        </div>
-
-        {errorMessage && (
-          <div
-            style={{
-              padding: 'var(--spacing-3) var(--spacing-4)',
-              backgroundColor: 'var(--color-danger-50)',
-              border: '1px solid var(--color-danger-500)',
-              borderRadius: 'var(--radius-sm)',
-              color: 'var(--color-danger-700)',
-              fontSize: 'var(--text-xs)',
-              fontWeight: 500,
-              marginBottom: 'var(--spacing-4)',
-            }}
-          >
-            {errorMessage}
+      {/* Sage Window Specimen Frame */}
+      <div className="herbarium-specimen-frame">
+        <div className="herbarium-paper-card">
+          {/* Header with Terracotta Wax Seal */}
+          <div className="herbarium-header">
+            <div className="herbarium-wax-seal" title="Con dấu tri thức Botanical">
+              <svg
+                width="26"
+                height="26"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
+                <path d="M8 9h6" />
+                <path d="M12 5.5c1.2 0 2 .8 2.2 1.8" />
+              </svg>
+            </div>
+            <h1>Chào mừng trở lại</h1>
+            <p>Đăng nhập vào không gian học tập và nghiên cứu Library AI</p>
           </div>
-        )}
 
-        <form onSubmit={handleSubmit(onSubmit)} style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-3)' }}>
-          <Input
-            label="Tên đăng nhập hoặc email"
-            placeholder="Nhập username hoặc email..."
-            error={errors.usernameOrEmail?.message}
-            disabled={loading}
-            {...register('usernameOrEmail')}
-          />
+          {/* Interactive Herbarium Tab Switcher */}
+          <div className="herbarium-tab-switcher" role="tablist" aria-label="Tùy chọn tài khoản">
+            <button
+              type="button"
+              role="tab"
+              aria-selected="true"
+              className="herbarium-tab-btn is-active"
+            >
+              Đăng nhập
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected="false"
+              className="herbarium-tab-btn"
+              onClick={() =>
+                navigate(`/register${returnUrl ? `?returnUrl=${encodeURIComponent(returnUrl)}` : ''}`)
+              }
+            >
+              Đăng ký
+            </button>
+          </div>
 
-          <div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2px' }}>
-              <span />
-              <Link
-                to="/forgot-password"
+          {errorMessage && (
+            <div
+              style={{
+                padding: '10px 14px',
+                backgroundColor: 'var(--color-danger-50)',
+                border: '1px solid var(--color-danger-500)',
+                borderRadius: '12px',
+                color: 'var(--color-danger-700)',
+                fontSize: 'var(--text-xs)',
+                fontWeight: 500,
+                marginBottom: '16px',
+              }}
+            >
+              {errorMessage}
+            </div>
+          )}
+
+          <form onSubmit={handleSubmit(onSubmit)} className="herbarium-form">
+            <Input
+              label="Tên đăng nhập hoặc email"
+              placeholder="Nhập username hoặc email..."
+              error={errors.usernameOrEmail?.message}
+              disabled={loading}
+              {...register('usernameOrEmail')}
+            />
+
+            <div>
+              <div
                 style={{
-                  fontSize: 'var(--text-xs)',
-                  color: 'var(--color-primary-600)',
-                  fontWeight: 600,
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  marginBottom: '2px',
                 }}
               >
-                Quên mật khẩu?
-              </Link>
+                <span />
+                <Link
+                  to="/forgot-password"
+                  style={{
+                    fontSize: '11px',
+                    color: 'var(--dp-color-accent)',
+                    fontWeight: 600,
+                    textDecoration: 'none',
+                  }}
+                >
+                  Quên mật khẩu?
+                </Link>
+              </div>
+              <PasswordInput
+                label="Mật khẩu"
+                placeholder="Nhập mật khẩu..."
+                error={errors.password?.message}
+                disabled={loading}
+                {...register('password')}
+              />
             </div>
-            <PasswordInput
-              label="Mật khẩu"
-              placeholder="Nhập mật khẩu..."
-              error={errors.password?.message}
-              disabled={loading}
-              {...register('password')}
-            />
+
+            <Button
+              type="submit"
+              variant="primary"
+              size="lg"
+              isLoading={loading}
+              style={{
+                width: '100%',
+                marginTop: '10px',
+                borderRadius: '999px',
+                minHeight: '46px',
+              }}
+            >
+              Đăng nhập vào thư viện <ArrowRight size={15} />
+            </Button>
+          </form>
+
+          <div className="herbarium-form-footer">
+            Chưa có tài khoản học giả?{' '}
+            <Link
+              to={`/register${returnUrl ? `?returnUrl=${encodeURIComponent(returnUrl)}` : ''}`}
+            >
+              Đăng ký thành viên mới
+            </Link>
           </div>
-
-          <Button type="submit" variant="primary" size="lg" isLoading={loading} style={{ marginTop: 'var(--spacing-2)' }}>
-            Đăng nhập
-          </Button>
-        </form>
-
-        <div style={{ marginTop: 'var(--spacing-8)', textAlign: 'center', fontSize: 'var(--text-xs)', color: 'var(--color-slate-400)' }}>
-          Chưa có tài khoản?{' '}
-          <Link to="/register" style={{ color: 'var(--color-primary-600)', fontWeight: 700 }}>
-            Đăng ký thành viên
-          </Link>
         </div>
       </div>
 
-      <style>{`
-        @media (max-width: 768px) {
-          .login-visual-side {
-            display: none !important;
-          }
-          .login-form-side {
-            max-width: 100% !important;
-            box-shadow: none !important;
-            padding: var(--spacing-6) !important;
-          }
-        }
-      `}</style>
+      <div
+        style={{
+          marginTop: '20px',
+          color: 'var(--dp-color-field-line)',
+          fontSize: '11px',
+          letterSpacing: 'var(--dp-typography-label-tracking)',
+          textTransform: 'uppercase',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '6px',
+        }}
+      >
+        <ShieldCheck size={13} color="var(--dp-color-accent)" />
+        <span>Library AI · Không gian học thuật số chuẩn mực</span>
+      </div>
     </div>
   );
 }

@@ -8,6 +8,7 @@ import { useAuth } from '@/app/providers';
 import { preloadRoute } from '@/app/routePreloaders';
 import { Avatar } from '@/components/ui/Avatar';
 import { DropdownMenu } from '@/components/ui/DropdownMenu';
+import { BrandLogo } from '@/components/ui/BrandLogo';
 
 interface AdminShellProps { children: React.ReactNode }
 
@@ -48,8 +49,7 @@ export const AdminShell = ({ children }: AdminShellProps) => {
   const sidebar = (
     <>
       <div className="shell-brand admin-brand" onClick={() => navigate(defaultHomePath)} role="button" tabIndex={0}>
-        <span className="shell-brand-mark">LA</span>
-        <span><strong>Library AI</strong><small>{isLibrarian ? 'Thủ thư (Librarian)' : 'Administration'}</small></span>
+        <BrandLogo subtitle={isLibrarian ? 'Nghiệp vụ thủ thư' : 'Hệ thống quản trị'} variant="light" />
       </div>
       <div className="shell-nav-label">{isLibrarian ? 'Nghiệp vụ thủ thư' : 'Trung tâm quản trị'}</div>
       <nav className="shell-nav" aria-label="Điều hướng quản trị">

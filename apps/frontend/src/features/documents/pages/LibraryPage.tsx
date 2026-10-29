@@ -243,9 +243,8 @@ export default function LibraryPage() {
               >
                 {/* Document Cover or Fallback */}
                 <div
+                  className="library-card-cover"
                   style={{
-                    height: '180px',
-                    backgroundColor: 'var(--color-slate-100)',
                     position: 'relative',
                     overflow: 'hidden',
                     display: 'flex',

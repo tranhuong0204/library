@@ -1,66 +1,112 @@
 :root {
-  /* Editorial Intelligence — core palette */
-  --color-primary-50: #eff6ff;
-  --color-primary-100: #dbeafe;
-  --color-primary-200: #bfdbfe;
-  --color-primary-300: #93c5fd;
-  --color-primary-400: #60a5fa;
-  --color-primary-500: #3b82f6;
-  --color-primary-600: #2563eb;
-  --color-primary-700: #1d4ed8;
-  --color-primary-800: #173b79;
-  --color-primary-900: #102a56;
-  --color-primary-950: #091a35;
+  /* ---------------------------------------------------- */
+  /* Botanical Design System — Soft & Restful Tokens      */
+  /* (Subdued, eye-friendly warm paper & gentle botanical) */
+  /* ---------------------------------------------------- */
+  --dp-color-ground: #f9f7f2;       /* Soft linen-ivory (restful, no harsh yellow glare) */
+  --dp-color-ink: #1f3329;          /* Deep restful forest-slate ink */
+  --dp-color-panel: #e7eae1;        /* Serene pale sage */
+  --dp-color-warm-field: #ede3d8;   /* Muted warm biscuit / sand */
+  --dp-color-accent: #7e5343;       /* Subdued earthy terracotta */
+  --dp-color-rule: #dfdcd1;         /* Quiet paper hairline rule */
+  --dp-color-ornament-line: #c3c8ba;/* Soft botanical line */
+  --dp-color-field-line: #75836f;   /* Muted sage-moss line */
 
-  --color-accent-50: #f4f6ff;
-  --color-accent-100: #e9edff;
-  --color-accent-200: #d7ddff;
-  --color-accent-300: #b7c2ff;
-  --color-accent-400: #8d9bff;
-  --color-accent-500: #6674f4;
-  --color-accent-600: #4f5ed7;
-  --color-accent-700: #3f4bb3;
-  --color-accent-800: #343f8e;
-  --color-accent-900: #2e3871;
-  --color-accent-950: #1c2142;
+  --dp-typography-display: "Botanical Garamond", "EB Garamond", Georgia, serif;
+  --dp-typography-reading: "Botanical Instrument", "Instrument Sans", "Be Vietnam Pro", -apple-system, BlinkMacSystemFont, sans-serif;
+  --dp-typography-body: 16px;
+  --dp-typography-metadata: 13px;
+  --dp-typography-label: 12px;
+  --dp-typography-compact-leading: 1.55;
+  --dp-typography-label-tracking: 0.12em;
 
-  --color-slate-50: #f8fafc;
-  --color-slate-100: #f1f5f9;
-  --color-slate-200: #e2e8f0;
-  --color-slate-300: #cbd5e1;
-  --color-slate-400: #94a3b8;
-  --color-slate-500: #64748b;
-  --color-slate-600: #475569;
-  --color-slate-700: #334155;
-  --color-slate-800: #1e293b;
-  --color-slate-900: #0f172a;
-  --color-slate-950: #020617;
+  --dp-spacing-panel-inline: max(30px, 4.2cqw);
+  --dp-radius-panel: 34px;
+  --dp-radius-panel-narrow: 27px;
+  --dp-radius-round: 50%;
+  --dp-border-hairline: 1px;
+  --dp-motion-interaction: 0.35s;
+  --dp-motion-easing: ease;
 
-  --color-success-50: #ecfdf3;
-  --color-success-100: #d1fadf;
-  --color-success-500: #22c55e;
-  --color-success-600: #16a34a;
-  --color-success-700: #15803d;
-  --color-warning-50: #fffbeb;
-  --color-warning-100: #fef3c7;
-  --color-warning-500: #f59e0b;
-  --color-warning-600: #d97706;
-  --color-warning-700: #b45309;
-  --color-danger-50: #fef2f2;
-  --color-danger-100: #fee2e2;
-  --color-danger-500: #ef4444;
-  --color-danger-600: #dc2626;
-  --color-danger-700: #b91c1c;
-  --color-info-50: #eff6ff;
-  --color-info-500: #3b82f6;
-  --color-info-600: #2563eb;
-  --color-info-700: #1d4ed8;
+  /* ---------------------------------------------------- */
+  /* Botanical Palette Scales (Calm & Balanced)           */
+  /* ---------------------------------------------------- */
 
-  --font-sans: "Segoe UI", "Be Vietnam Pro", Inter, Roboto, "Helvetica Neue", Arial, sans-serif;
-  /* Headings contain Vietnamese text throughout the product. Use the same
-     Unicode-complete family to prevent detached accents and artificial gaps. */
-  --font-editorial: "Segoe UI", "Be Vietnam Pro", Inter, Roboto, Arial, sans-serif;
-  --font-brand: Georgia, "Times New Roman", serif;
+  /* Deep Forest Green Palette (Core Ink & Primaries) */
+  --color-primary-50: #f6f8f6;
+  --color-primary-100: #e9eee9;
+  --color-primary-200: #d2ddd4;
+  --color-primary-300: #b0c3b3;
+  --color-primary-400: #85a289;
+  --color-primary-500: #597d60;
+  --color-primary-600: #3b5c43;
+  --color-primary-700: #1f3329; /* Restful Forest Slate Ink */
+  --color-primary-800: #182921;
+  --color-primary-900: #121e18;
+  --color-primary-950: #0a130f;
+
+  /* Terracotta & Clay Palette (Subdued Accents) */
+  --color-accent-50: #faf7f5;
+  --color-accent-100: #f4eee9;
+  --color-accent-200: #e8dbd2;
+  --color-accent-300: #d7beaf;
+  --color-accent-400: #c19c88;
+  --color-accent-500: #a37762;
+  --color-accent-600: #7e5343; /* Subdued Earthy Terracotta */
+  --color-accent-700: #664134;
+  --color-accent-800: #503328;
+  --color-accent-900: #3b251d;
+  --color-accent-950: #231510;
+
+  /* Cream Paper & Sage Neutrals (Gentle, low-saturation) */
+  --color-slate-50: #f9f7f2;  /* Gentle Linen-Ivory Ground */
+  --color-slate-100: #e7eae1; /* Quiet Sage Panel */
+  --color-slate-200: #dfdcd1; /* Soft Paper Rule */
+  --color-slate-300: #c3c8ba; /* Botanical Ornament Line */
+  --color-slate-400: #989e90;
+  --color-slate-500: #75836f; /* Field Line on Green */
+  --color-slate-600: #576452;
+  --color-slate-700: #3d4a39;
+  --color-slate-800: #2c392b;
+  --color-slate-900: #1f3329; /* Forest Slate Text */
+  --color-slate-950: #14221b;
+
+  /* Botanical Sage & Scholar Green */
+  --color-scholar-50: #f6f8f4;
+  --color-scholar-100: #e7eae1; /* Soft Sage */
+  --color-scholar-500: #3d5e46;
+  --color-scholar-600: #2a4633;
+  --color-scholar-700: #1f3329;
+
+  /* Status Colors Harmonized with Botanical Paper */
+  --color-success-50: #f3f8f4;
+  --color-success-100: #e1efe4;
+  --color-success-500: #357a4b;
+  --color-success-600: #28633c;
+  --color-success-700: #1e4c2e;
+
+  --color-warning-50: #faf7f0;
+  --color-warning-100: #f4ecdc;
+  --color-warning-500: #b87928;
+  --color-warning-600: #9c621a;
+  --color-warning-700: #7e4b0f;
+
+  --color-danger-50: #faf3f1;
+  --color-danger-100: #f5e4e0;
+  --color-danger-500: #be4b3e;
+  --color-danger-600: #a1382c;
+  --color-danger-700: #81281e;
+
+  --color-info-50: #f2f6f7;
+  --color-info-500: #356b82;
+  --color-info-600: #285467;
+  --color-info-700: #1d3f4e;
+
+  /* Typography */
+  --font-sans: var(--dp-typography-reading);
+  --font-editorial: var(--dp-typography-display);
+  --font-brand: var(--dp-typography-display);
+
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
   --text-base: 1rem;
@@ -81,18 +127,21 @@
   --spacing-12: 3rem;
   --spacing-16: 4rem;
 
+  /* Border Radii */
   --radius-xs: 8px;
-  --radius-sm: 10px;
-  --radius-md: 14px;
-  --radius-lg: 18px;
-  --radius-xl: 24px;
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: var(--dp-radius-panel-narrow);
+  --radius-xl: var(--dp-radius-panel);
   --radius-full: 9999px;
 
-  --shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.04);
-  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05), 0 8px 24px -20px rgba(15, 23, 42, 0.22);
-  --shadow-md: 0 12px 32px -20px rgba(15, 23, 42, 0.26), 0 3px 10px -6px rgba(15, 23, 42, 0.12);
-  --shadow-lg: 0 24px 60px -30px rgba(9, 26, 53, 0.34), 0 10px 24px -18px rgba(9, 26, 53, 0.18);
-  --shadow-glow: 0 18px 38px -20px rgba(79, 94, 215, 0.48);
+  /* Ambient Botanical Paper Shadows (Feather-light, non-distracting) */
+  --shadow-xs: 0 1px 2px rgba(25, 42, 33, 0.03);
+  --shadow-sm: 0 2px 4px rgba(25, 42, 33, 0.04), 0 6px 18px -14px rgba(25, 42, 33, 0.08);
+  --shadow-md: 0 10px 24px -14px rgba(25, 42, 33, 0.10), 0 2px 6px -3px rgba(25, 42, 33, 0.04);
+  --shadow-lg: 0 20px 44px -20px rgba(25, 42, 33, 0.14), 0 8px 16px -12px rgba(25, 42, 33, 0.06);
+  --shadow-glow: 0 12px 28px -14px rgba(126, 83, 67, 0.28);
+  --shadow-book: 2px 5px 15px -4px rgba(25, 42, 33, 0.12), 0 1px 2px rgba(25, 42, 33, 0.06);
 
   --width-container-sm: 640px;
   --width-container-md: 768px;
@@ -100,11 +149,12 @@
   --width-container-xl: 1280px;
   --width-container-xxl: 1480px;
   --shell-header-height: 72px;
-  --shell-sidebar-width: 264px;
+  --shell-sidebar-width: 268px;
 
-  --transition-fast: 140ms cubic-bezier(0.2, 0, 0, 1);
-  --transition-normal: 240ms cubic-bezier(0.2, 0, 0, 1);
-  --transition-slow: 360ms cubic-bezier(0.16, 1, 0.3, 1);
-  --focus-ring: 3px solid rgba(37, 99, 235, 0.34);
+  /* Interactions & Focus */
+  --transition-fast: 160ms cubic-bezier(0.2, 0, 0, 1);
+  --transition-normal: var(--dp-motion-interaction) var(--dp-motion-easing);
+  --transition-slow: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  --focus-ring: 3px solid rgba(126, 83, 67, 0.38);
   --focus-ring-offset: 2px;
 }

@@ -276,11 +276,11 @@ export default function DocumentDetailPage({ adminMode = false }: DocumentDetail
           }}
         >
           <div>
-            <h1 style={{ fontSize: 'var(--text-2xl)', fontWeight: 800, color: 'var(--color-primary-950)' }}>
+            <h1 style={{ fontFamily: 'var(--font-editorial)', fontSize: 'clamp(1.5rem, 2.8vw, 2.1rem)', fontWeight: 700, color: 'var(--color-primary-950)', letterSpacing: '-0.015em' }}>
               {document.title}
             </h1>
-            <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-slate-500)', marginTop: '4px' }}>
-              Tác giả: {document.author || 'Chưa rõ'} | Đăng tải bởi: {document.uploadedByName}
+            <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-slate-500)', marginTop: '6px' }}>
+              Tác giả: <strong style={{ color: 'var(--color-slate-700)' }}>{document.author || 'Chưa rõ'}</strong> | Đăng tải bởi: {document.uploadedByName}
             </p>
           </div>
 
@@ -313,13 +313,14 @@ export default function DocumentDetailPage({ adminMode = false }: DocumentDetail
           {/* Cover image preview card */}
           <div
             style={{
+              position: 'relative',
               width: '100%',
               maxWidth: '220px',
               height: '300px',
               backgroundColor: 'white',
               border: '1px solid var(--color-slate-200)',
               borderRadius: 'var(--radius-md)',
-              boxShadow: 'var(--shadow-sm)',
+              boxShadow: 'var(--shadow-book)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
